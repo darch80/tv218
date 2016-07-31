@@ -4,7 +4,7 @@
     <div class="hero item">
       <article class="post-<?php echo $n->id ?>">
         <?php if ($n->type == "video") { ?>
-          <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="/sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+          <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
         <?php } ?>
         <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270'] ?>" alt=""></a>
 
@@ -41,7 +41,7 @@
           <div class="cell-3">
             <article class="snippet fxdhgt">
               <?php if ($article->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="/sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
               <?php } ?>
               <a href="<?php echo $article->href ?>">
                 <img src="<?php echo $article->image['x300'] ?>" alt="">
@@ -85,7 +85,7 @@
           <div class="hero-2 item">
             <article class="post-<?php echo $n->id ?>">
               <?php if ($n->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="/sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
               <?php } ?>
               <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
 
@@ -107,7 +107,7 @@
             <article
               class="snippet <?php echo $nq['latest'][$i]->image != '' ? '' : 'no-img ' ?><?php echo $nq['latest'][$i]->type ?> <?php echo $nq['latest'][$i]->type == 'social' ? $nq['latest'][$i]->social_channel : '' ?>">
                 <?php if ($nq['latest'][$i]->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="/sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
               <?php } ?>
               <?php if ($nq['latest'][$i]->image): ?>
                 <img src="<?php echo $nq['latest'][$i]->image['x300'] ?>" alt="" />
@@ -179,7 +179,7 @@
           </div>
         </div>
         <div style="float: right;width: 66%;">
-          <img src="/sites/all/themes/tv218/assets/sample-video.png" width="100%" />
+          <img src="sites/all/themes/tv218/assets/sample-video.png" width="100%" />
         </div>
       </div>
       <div class="row">
@@ -226,35 +226,35 @@
             <h3 class="bold">أفضل خمس مقالات</h3>
             <ol class="topfive">
               <li>
-                <a href="http://218tv.net.s207080.gridserver.com/content/%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%86-%D8%B1%D8%A7%D8%B3-%D9%84%D8%A7%D9%86%D9%88%D9%81-%D8%A7%D8%B3%D8%AA%D8%A6%D9%86%D8%A7%D9%81-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7">
+                <a href="/content/%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%86-%D8%B1%D8%A7%D8%B3-%D9%84%D8%A7%D9%86%D9%88%D9%81-%D8%A7%D8%B3%D8%AA%D8%A6%D9%86%D8%A7%D9%81-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7">
                   <span>1</span>
                   "رئاسي الوفاق" يعلن من راس لانوف استئناف "تصدير النفط" 
                   <small>7,030</small>
                 </a>
               </li>
               <li>
-                <a href="http://218tv.net.s207080.gridserver.com/content/%D8%BA%D8%A7%D8%AF%D8%A9-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B2%D9%82-%D8%AA%D8%B8%D9%87%D8%B1-%D8%A8%D9%84%D8%A7-%D9%85%D8%A7%D9%83%D9%8A%D8%A7%D8%AC-%D9%88%D8%AA%D8%AB%D9%8A%D8%B1-%D8%B1%D8%AF%D9%88%D8%AF%D8%A7-%D8%B4%D8%A7%D9%87%D8%AF">
+                <a href="content/%D8%BA%D8%A7%D8%AF%D8%A9-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B2%D9%82-%D8%AA%D8%B8%D9%87%D8%B1-%D8%A8%D9%84%D8%A7-%D9%85%D8%A7%D9%83%D9%8A%D8%A7%D8%AC-%D9%88%D8%AA%D8%AB%D9%8A%D8%B1-%D8%B1%D8%AF%D9%88%D8%AF%D8%A7-%D8%B4%D8%A7%D9%87%D8%AF">
                   <span>2</span>
                   غادة عبدالرازق تظهر بلا"ماكياج" وتثير ردودا.. شاهد
                   <small>7,030</small>
                 </a>
               </li>
               <li>
-                <a href="http://218tv.net.s207080.gridserver.com/content/%D9%82%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%AF%D8%A7%D8%B9%D8%B4-%D9%8A%D8%AA%D9%86%D9%82%D9%84%D9%88%D9%86-%D8%B3%D8%B1%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A8%D9%8A%D9%86-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%88%D8%AA%D9%88%D9%86%D8%B3">
+                <a href="content/%D9%82%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%AF%D8%A7%D8%B9%D8%B4-%D9%8A%D8%AA%D9%86%D9%82%D9%84%D9%88%D9%86-%D8%B3%D8%B1%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A8%D9%8A%D9%86-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%88%D8%AA%D9%88%D9%86%D8%B3">
                   <span>3</span>
                   قادة في داعش يتنقلون سرا على الحدود بين ليبيا وتونس
                   <small>7,030</small>
                 </a>
               </li>
               <li>
-                <a href="http://218tv.net.s207080.gridserver.com/content/%D8%A7%D9%84%D8%B3%D8%A4%D8%A7%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%AD%D8%B5%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D8%9F">
+                <a href="content/%D8%A7%D9%84%D8%B3%D8%A4%D8%A7%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%AD%D8%B5%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D8%9F">
                   <span>4</span>
                   السؤال الكبير: ماذا يحصل في العاصمة طرابلس؟
                   <small>7,030</small>
                 </a>
               </li>
               <li>
-                <a href="http://218tv.net.s207080.gridserver.com/content/%D9%81%D9%88%D8%B4%D9%8A%D9%83-%D8%A8%D9%80-10-%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%84%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D9%8A%D9%86">
+                <a href="content/%D9%81%D9%88%D8%B4%D9%8A%D9%83-%D8%A8%D9%80-10-%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%84%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D9%8A%D9%86">
                   <span>5</span>
                   "فوشيك" بـ 10 مليارات دولار للتواصل بين "الإرهابيين"
                   <small>7,030</small>

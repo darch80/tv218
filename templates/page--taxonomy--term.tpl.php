@@ -53,7 +53,7 @@ $popular = $GLOBALS['popular'];
               <?php if ($nodes[$i]) { ?>
 
                 <?php if ($nodes[$i]->type == "video") { ?>
-                  <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="/sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                  <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
                 <?php } ?>
                 <?php if ($nodes[$i]->type != 'blog') { ?>
                   <a href="<?php echo render_href($nodes[$i]->nid) ?>">

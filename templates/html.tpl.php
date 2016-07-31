@@ -2,6 +2,7 @@
 <html lang="ar">
   <head>
     <meta charset="utf-8">
+    <base href="<?php echo $GLOBALS['base_path']; ?>"/>
     <link rel="icon" type="image/png" href="<?php echo base_path() . path_to_theme(); ?>/favicon.png">
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
@@ -259,7 +260,7 @@
           </div>
           <div class="cell-3" style="padding-bottom: 0px;">
             <div class="iphone">
-              <img src="/sites/all/themes/tv218/assets/218-iphone.png"/>
+              <img src="sites/all/themes/tv218/assets/218-iphone.png"/>
             </div>
             <ul class="mob-app">
               <li style="font-size:0.6em;">218 APP</li>
@@ -506,7 +507,8 @@
         $("#liveshow-rail .toplisting").html(html);
       }
       jQuery(function () {
-        var liveurl = '<?php echo $base_url; ?>/ajax/live/load';
+        var liveurl = 'ajax/live/load';
+        console.log(liveurl);
         $.get(liveurl, function (data) {
           renderlive(data);
 
