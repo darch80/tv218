@@ -245,10 +245,10 @@
     <div class="w-footer">
       <div class="footer">
         <div class="row">
-          <div class="cell-3">
+          <div class="cell-3 pd">
             <div class="flogo">
               <a href="<?php echo base_path() ?>"><img
-                  src="<?php echo base_path() . path_to_theme() ?>/assets/footer-logo.png" alt=""></a>
+                  src="<?php echo base_path() . path_to_theme() ?>/assets/footer-logo.png" alt="218tv white logo" ></a>
             </div>
 
             <ul class="nav">
@@ -257,11 +257,19 @@
               <?php endforeach ?>
             </ul>
           </div>
-            <div class="cell-3">
-              <!--<img src="/sites/all/themes/tv218/assets/218-iphone.png"/>-->
+          <div class="cell-3" style="padding-bottom: 0px;">
+            <div class="iphone">
+              <img src="/sites/all/themes/tv218/assets/218-iphone.png"/>
+            </div>
+            <ul class="mob-app">
+              <li style="font-size:0.6em;">218 APP</li>
+              <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-android" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-windows" aria-hidden="true"></i></a></li>
+            </ul>
           </div>
 
-          <div class="cell-3">
+          <div class="cell-3 pd">
             <div class="form-newsletter" style="width: 100%;">
               <h4 style="color: #fff;">اشترك</h4>
               <!-- Begin MailChimp Signup Form -->
@@ -270,13 +278,13 @@
                 /*#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }*/
                 /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-              </style>Simpl
+              </style>
               <div id="mc_embed_signup">
                 <form action="//ana.us11.list-manage.com/subscribe/post?u=dc3c27747693723b928932a2a&amp;id=37251ca25b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll">
 
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="أدخل بريدك الالكتروني" required style="border-radius: 4px;width: 222px;height: 36px;float: right;">
-                    <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;"></div>
+                    <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;text-align: center;vertical-align: middle;"></div>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_dc3c27747693723b928932a2a_37251ca25b" tabindex="-1" value=""></div>
                   </div>

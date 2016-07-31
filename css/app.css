@@ -3792,8 +3792,9 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
 }
 
 .w-footer {
-  background: #2f2f2f;
+  background: #3b3b3b;
   display: none;
+  overflow: hidden;
 }
 @media (min-width: 640px) {
   .w-footer {
@@ -3805,8 +3806,7 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
   max-width: 1270px;
   margin-left: auto;
   margin-right: auto;
-  padding: 2.275em 0;
-  margin-top: 3.25em;
+  margin-top: 1em;
 }
 .footer:after {
   content: " ";
@@ -3820,8 +3820,12 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
   border: 0;
   overflow: hidden;
   *zoom: 1;
-  margin-top: 35px;
+  margin-top: 10px;
   margin-right: 50px;
+  font-size: 14px;
+}
+.footer .pd{
+  padding: 2.275em 0;
 }
 .footer ul.nav li {
   list-style-image: none;
@@ -3830,15 +3834,6 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
   white-space: nowrap;
   padding-left: 10px;
   padding-right: 10px;
-}
-.footer ul.nav li:first-child {
-  padding-right: 0;
-}
-.footer ul.nav li:last-child {
-  padding-left: 0;
-}
-.footer ul.nav li.last {
-  padding-left: 0;
 }
 .footer .nav ul.social {
   padding: 0;
@@ -3884,7 +3879,7 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
   color: #fff
 }
 .footer i {
- padding: 0.25em;
+  padding: 0.25em;
   display: block;
   font-size: 1.2em;
 }
@@ -3892,7 +3887,7 @@ ol.topfive li:hover a, ol.topfive li:hover a span, ol.topfive li:hover a small {
   float: right;
 }
 .footer .flogo img {
-  width: 110px;
+  width: 174px;
 }
 
 .a-date {
@@ -5811,4 +5806,14 @@ article.article{
 
 .social > li{
   float: right;
+}
+.iphone{
+  float: right;margin-left: 20px;
+  width: auto;
+  height: 200px;
+}
+.mob-app{
+  float: right; color: rgb(255, 255, 255); text-align: left; padding-top: 30px; margin-top: 30px;
+  font-family: Roboto;
+  font-size: 2em;
 }
