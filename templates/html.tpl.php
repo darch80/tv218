@@ -258,7 +258,7 @@
             </ul>
           </div>
             <div class="cell-3">
-              <img src="/sites/all/themes/tv218/assets/218-iphone.png"/>
+              <!--<img src="/sites/all/themes/tv218/assets/218-iphone.png"/>-->
           </div>
 
           <div class="cell-3">
