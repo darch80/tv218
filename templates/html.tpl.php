@@ -163,7 +163,7 @@
       <div class="header">
         <div class="logo">
           <a href="<?php echo base_path() ?>"><img src="<?php echo base_path() . path_to_theme() ?>/assets/logo.svg"
-                                                   alt="" height="43px"></a>
+                                                   alt="" width="90px"></a>
         </div>
 
         <div class="nav">
@@ -171,12 +171,6 @@
             <?php
             $skip = 1;
             foreach ($menus['nav'] as $index => $item):
-              if (0 < $skip) {
-                $skip--;
-                continue;
-              }
-              ?>
-              <?php
               $url = strtok($_SERVER["REQUEST_URI"], '?');
               $url_hash = md5(parse_url($url, PHP_URL_PATH));
               $url_nav = strtok($item['href'], '?');
@@ -197,27 +191,23 @@
           </div>
 
           <ul class="social">
-            <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-            <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
-                  class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank">
+                <i class="fa fa-linkedin"></i></a></li>
             <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                   class="fa fa-google-plus"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank"><i
-                  class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
+                  class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
           </ul>
           <div class="weather">
-            <ul>
-              <li>
-                <div class="info">
-                  <div>القاهره</div>
-                  <div class="weather-temperature-ny"></div>
-                </div>
-                <div class="icon ny">
-                  <img src="" class="weather-icon-ny" alt="Weather Icon"/>
-                </div>
-              </li>
-            </ul>
+            <div class="info">
+              <div>القاهره</div>
+              <div class="weather-temperature-ny"></div>
+            </div>
+            <div class="icon ny">
+              <img src="" class="weather-icon-ny" alt="Weather Icon"/>
+            </div>
           </div>
         </div>
       </div>
@@ -260,7 +250,7 @@
           </div>
           <div class="cell-3" style="padding-bottom: 0px;">
             <div class="iphone">
-              <img src="sites/all/themes/tv218/assets/218-iphone.png"/>
+              <img src="<?php echo base_path() . path_to_theme() ?>/assets/218-iphone.png"/>
             </div>
             <ul class="mob-app">
               <li style="font-size:0.6em;">218 APP</li>

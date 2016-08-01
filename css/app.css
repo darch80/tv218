@@ -3054,19 +3054,16 @@ input[type="submit"]:hover {
   max-width: 1270px;
   margin-left: auto;
   margin-right: auto;
-  padding: 16px 0;
+  padding: 15px 0;
 }
 .header:after {
   content: " ";
   display: block;
   clear: both;
 }
-.header .logo {
-  float: left;
-  display: block;
-}
 .header .logo img {
-  width: 87px;
+  width: 90px;
+  float: right;
 }
 .header nav {
   float: right;
@@ -3089,33 +3086,22 @@ input[type="submit"]:hover {
 /* layout */
 .w-header {
   background-color: #3b3b3b;
+  height: 86px;
 }
 
 .header {
   max-width: 1270px;
   margin-left: auto;
   margin-right: auto;
-  height: 145px;
 }
 .header:after {
   content: " ";
   display: block;
   clear: both;
 }
-.header .logo {
-  float: right;
-  /*margin-top: 10px;*/
-}
-.header .logo img {
-  width: 175px;
-}
 
-.w-header {
-}
 .w-header .nav {
-  /*  max-width: 1270px;
-    margin-left: auto;
-    margin-right: auto;*/
+  margin-top: 10px;
 }
 .w-header .nav:after {
   content: " ";
@@ -3130,6 +3116,7 @@ input[type="submit"]:hover {
   *zoom: 1;
   float: right;
   margin-left: 15px;
+  width: 596px;
 }
 .w-header .nav ul li {
   list-style-image: none;
@@ -3139,9 +3126,10 @@ input[type="submit"]:hover {
   float: right;
   padding-left: 4px;
   padding-right: 4px;
+  text-align: center;
 }
 .w-header .nav ul li:first-child {
-  padding-right: 0;
+  margin-right: 35px;
 }
 .w-header .nav ul li:last-child {
   padding-left: 0;
@@ -3156,15 +3144,17 @@ input[type="submit"]:hover {
   display: block;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   font-family: "Droid Arabic Kufi", sans-serif;
+  font-size: 18px;
 }
 .w-header .nav ul a.livestream, .w-header .nav ul a.active {
   /*background: #26bfb5;*/
   color: #3cfff3;
 }
 .w-header .nav ul a:hover {
-  border-bottom: 4px solid #5ce6dc;
+  color: #00ffff;
 }
 .w-header .nav ul.social {
+  width: auto;
   padding: 0;
   border: 0;
   overflow: hidden;
@@ -3175,18 +3165,8 @@ input[type="submit"]:hover {
   list-style-type: none;
   margin-left: 0;
   white-space: nowrap;
-  float: left;
-  padding-left: 0;
-  padding-right: 0;
-}
-.w-header .nav ul.social li:first-child {
-  padding-left: 0;
-}
-.w-header .nav ul.social li:last-child {
-  padding-right: 0;
-}
-.w-header .nav ul.social li.last {
-  padding-right: 0;
+  float: right;
+  padding: 0;
 }
 .w-header .nav ul.social a:hover {
   border:none;
@@ -3209,8 +3189,7 @@ input[type="submit"]:hover {
 
 .search-box {
   float: right;
-  margin-left: 30px;
-  margin-top: -7px;
+  margin-top: -5px;
 }
 .search-box input {
   width: 183px;
@@ -3389,7 +3368,7 @@ h3.search-title {
   margin-right: auto;
   font-family: "Droid Arabic Kufi", sans-serif;
   margin: 0 auto;
-  margin-bottom: 2.1125em;
+  margin-bottom: 27px;
   position: relative;
 }
 .hero:after {
@@ -3411,21 +3390,20 @@ h3.search-title {
 }
 .hero .headline-overlay {
   position: absolute;
-  bottom: 3.25em;
-  right: 30px;
+  bottom: 55px;
+  right: 53px;
 }
 .hero .headline-overlay h3 {
-  font-size: 1.25em;
-  line-height: 2.6em;
+  font-size: 20px;
   color: #898989;
-  background: #ffffff;
-  padding: 0.1625em 15px;
+  background: rgba(255,255,255,0.9);
+  padding: 15px;
+  width: 1152px;
 }
 .hero .headline-overlay h3 a{
   font-size: 1.25em;
   line-height: 2.6em;
   color: #898989;
-  background: #ffffff;
   padding: 0.1625em 15px;
 }
 @media (min-width: 640px) {
@@ -3442,6 +3420,7 @@ h3.search-title {
   font-weight: bold;
   background: #3b3b3b;
   padding: 15px;
+  width: 187px;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h2 {
@@ -4460,52 +4439,34 @@ body.node-type-author .profile .author p {
 .weather {
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #ffffff;
-  margin: 0.8125em auto;
-  font-size: 0.8125em;
-  direction: rtl;
+  float: right;
+  position: relative;
+}
+.weather .info{
   position: absolute;
+  top:-15px;
+  right: 20px;
 }
-.weather ul {
-  margin-top: -25px !important;
+.icon.ny{
+  position: absolute;
+  top:-20px;
+  right: 45px;
 }
-.weather ul li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0;
-  white-space: nowrap;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.weather ul li:first-child {
-  padding-left: 0;
-}
-.weather ul li:last-child {
-  padding-right: 0;
-}
-.weather ul li.last {
-  padding-right: 0;
-}
-.weather ul li {
-  display: -webkit-flex;
-  display: flex;
-}
-.weather ul li .info {
-  margin-left: 5px;
+
+.weather .info > div{
+  font-size: 10px;
 }
 .weather .info div + div {
   visibility: hidden;
 }
 .weather-temperature-ny{
-  font-weight: lighter;
-  font-size: 2em;
+  font-family: 'Avenir Next LT Pro Ultra Light Condensed',sans-serif;
+  font-size: 28px !important;
 }
 .weather ul li .icon {
-  /*width: 40px;*/
   visibility: hidden;
 }
 .weather ul li .icon img {
-  /*width: 40px;*/
   margin-right: -5px;
 }
 
@@ -5596,6 +5557,9 @@ span.playicon-over{margin:10px;position: absolute;}
   }
 }
 
+#container{
+  margin-top: 40px;
+}
 #container, .container{
   max-width: 1270px;
   margin-left: auto;
@@ -5641,16 +5605,26 @@ article.snippet .text h3{font-size: 1em;color:#3b3b3b;margin: 0px;}
   vertical-align: middle;
   padding-top: 2px;
 }
-.news-ticker{height: 60px;background: #fff;padding-top: 20px;overflow: hidden;}
+.news-ticker{
+  font-family: "Droid Arabic Kufi", sans-serif;
+  /*height: 60px;*/
+  background: #fff;
+  padding-top: 15px;
+  overflow: hidden;
+}
 .news-ticker label{
   background-color: #ed1c24;
   color: #fff;
-  padding: 10px 20px 5px 20px;
-  font-size: 1.5em;
+  padding: 5px 15px 15px 30px;
+  font-size: 25px;
   font-weight: bold;
   float: right;
 }
 #webticker li{float: right;}
+
+.tickercontainer{
+  padding-top: 5px;
+}
 .tickercontainer
 /*width of the original container in which the ticker appears*/
 .tickercontainer .mask
@@ -5845,15 +5819,14 @@ have a fixed width and height (but it's not required).
 .jcarousel-control-prev,
 .jcarousel-control-next {
   position: absolute;
-  top: 280px;
-  width: 30px;
-  height: 30px;
+  top: 290px;
+  width: 46px;
+  height: 46px;
   text-align: center;
   background: rgba(255,255,255,0.4);
   color: #fff;
   text-decoration: none;
   text-shadow: 0 0 1px #000;
-  font: 24px/27px Arial, sans-serif;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -5861,15 +5834,22 @@ have a fixed width and height (but it's not required).
   -moz-box-shadow: 0 0 2px #999;
   box-shadow: 0 0 2px #999;
   padding: 0px;
+  padding-top: 9px;
   margin: 0px;
 }
 .owl-prev,
 .jcarousel-control-prev {
-  left: 35px;
+  left: 27px;
 }
 .owl-next,
 .jcarousel-control-next {
-  right: 35px;
+  right: 27px;
+}
+.owl-prev i,
+.jcarousel-control-prev i,
+.owl-next i,
+.jcarousel-control-next i{
+  font-size: 46px;
 }
 .owl-prev:hover, .owl-next:hover,
 .jcarousel-control-prev:hover ,
@@ -5877,6 +5857,7 @@ have a fixed width and height (but it's not required).
   display: block;
   opacity: 0.6;
   background-color: rgba(255,255,255,0.8);
+  color: #fff;
 }
 
 .jcarousel-control-prev.inactive,

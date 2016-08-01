@@ -7,7 +7,7 @@ global $base_url;
       <li class="hero item">
         <article class="post-<?php echo $n->id ?>">
           <?php if ($n->type == "video") { ?>
-            <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+            <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
           <?php } ?>
           <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270'] ?>" alt=""></a>
 
@@ -47,7 +47,7 @@ global $base_url;
           <div class="cell-3">
             <article class="snippet fxdhgt">
               <?php if ($article->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
               <a href="<?php echo $article->href ?>">
                 <img src="<?php echo $article->image['x300'] ?>" alt="">
@@ -92,7 +92,7 @@ global $base_url;
           <div class="hero-2 item">
             <article class="post-<?php echo $n->id ?>">
               <?php if ($n->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
               <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
               <div class="headline">
@@ -114,7 +114,7 @@ global $base_url;
             <article
               class="snippet <?php echo $nq['latest'][$i]->image != '' ? '' : 'no-img ' ?><?php echo $nq['latest'][$i]->type ?> <?php echo $nq['latest'][$i]->type == 'social' ? $nq['latest'][$i]->social_channel : '' ?>">
                 <?php if ($nq['latest'][$i]->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
               <?php if ($nq['latest'][$i]->image): ?>
                 <img src="<?php echo $nq['latest'][$i]->image['x300'] ?>" alt="" />
@@ -232,7 +232,7 @@ global $base_url;
           <div id="live-broadcast">
             <a href="#" class="bth-mbshr">
               <h3>البث المباشر 
-                <img src="sites/all/themes/tv218/assets/play.png" width="28px"/>
+                <img src="<?php echo base_path() . path_to_theme() ?>/assets/play.png" width="28px"/>
               </h3>
             </a>
           </div>
