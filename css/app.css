@@ -5770,35 +5770,7 @@ ul.newsticker {
 .rightbar ul li:last-child{
   border-bottom: none;
 }
-.owl-controls {
-  margin: 0;
-}
-.owl-prev, .owl-next{
-  background: rgba(255, 255, 255, 0.4);
-  border:1px solid white;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin: auto !important;
-}
-.my-owl-theme .owl-buttons i{
-  color: #fff;
-  font-size: 1em;
-  font-weight: bolder;
-}
-.my-owl-theme .owl-controls .owl-buttons div {
-  position: absolute;
-  padding: 7px 15px 5px 9px;
-}
-.my-owl-theme .owl-controls .owl-buttons .owl-prev{
-  left: 35px;
-  top: 280px; 
-}
 
-.my-owl-theme .owl-controls .owl-buttons .owl-next{
-  right: 35px;
-  top: 280px;
-}
 article.article{
   background: #fff;
   padding: 10px;
@@ -5816,4 +5788,79 @@ article.article{
   float: right; color: rgb(255, 255, 255); text-align: left; padding-top: 30px; margin-top: 30px;
   font-family: Roboto;
   font-size: 2em;
+}
+#hero{
+  position: relative;
+  overflow: hidden;
+}
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+#hero ul{
+  width: 20000em;
+  position: relative;
+
+  /* Optional, required in this case since it's a <ul> element */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+#hero li{
+  /* Required only for block elements like <li>'s */
+  float: left;
+  width: 1270px;
+  height: 630px;
+}
+#hero2{position: relative;}
+
+.owl-theme .owl-controls .owl-buttons div,
+.owl-prev, .owl-next,
+.jcarousel-control-prev,
+.jcarousel-control-next {
+  position: absolute;
+  top: 280px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.4);
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 1px #000;
+  font: 24px/27px Arial, sans-serif;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 2px #999;
+  -moz-box-shadow: 0 0 2px #999;
+  box-shadow: 0 0 2px #999;
+  padding: 0px;
+  margin: 0px;
+}
+.owl-prev,
+.jcarousel-control-prev {
+  left: 35px;
+}
+.owl-next,
+.jcarousel-control-next {
+  right: 35px;
+}
+.owl-prev:hover, .owl-next:hover,
+.jcarousel-control-prev:hover ,
+.jcarousel-control-next:hover {
+  display: block;
+  opacity: 0.6;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+  opacity: 0.2;
+  cursor: default;
 }

@@ -1,23 +1,26 @@
-<!--http://owlgraphic.com/owlcarousel/demos/one.html-->
-<div id="owl-hero" class="w-hero">
-  <?php foreach ($nq['hero'] as $n): ?>
-    <div class="hero item">
-      <article class="post-<?php echo $n->id ?>">
-        <?php if ($n->type == "video") { ?>
-          <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
-        <?php } ?>
-        <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270'] ?>" alt=""></a>
+<div id="hero" class="jcarousel">
+  <ul>
+    <?php foreach ($nq['hero'] as $n): ?>
+      <li class="hero item">
+        <article class="post-<?php echo $n->id ?>">
+          <?php if ($n->type == "video") { ?>
+            <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+          <?php } ?>
+          <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270'] ?>" alt=""></a>
 
-        <div class="headline-overlay">
-          <h2><a href="<?php echo $n->href ?>">سياسة</a></h2>
-          <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
-        </div>
-      </article>
-    </div>
-  <?php endforeach ?>
+          <div class="headline-overlay">
+            <h2><a href="<?php echo $n->href ?>">سياسة</a></h2>
+            <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
+          </div>
+        </article>
+      </li>
+    <?php endforeach ?>
+  </ul>
+  <a href="#" class="jcarousel-control-prev"><i class='icon-chevron-left icon-white'>&lsaquo;</i></a>
+  <a href="#" class="jcarousel-control-next"><i class='icon-chevron-right icon-white'>&rsaquo;</i></a>
 </div>
 
-<div class="w-main" style="direction: rtl;">
+<div class="w-main">
   <div class="main">
 
     <div class="first">
@@ -80,7 +83,8 @@
           </div>
         <?php endfor; ?>
       </div>
-      <div id="owl-hero2" class="w-hero">
+
+      <div id="hero2">
         <?php foreach ($nq['hero_2'] as $n): ?>
           <div class="hero-2 item">
             <article class="post-<?php echo $n->id ?>">
@@ -88,17 +92,17 @@
                 <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
               <?php } ?>
               <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
-
               <div class="headline">
                 <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
-                <ul class="tags left">
-                  <?php echo $article->tags['html'] ?>
+                <ul class="tags">
+                  <?php echo $n->tags['html'] ?>
                 </ul>
               </div>
             </article>
           </div>
         <?php endforeach ?>
       </div>
+
       <div class="row">
         <?php
         for ($i = 1; $i <= 3; $i++):

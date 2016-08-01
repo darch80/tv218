@@ -349,6 +349,9 @@
     <script type="text/javascript" src="<?php echo base_path() . path_to_theme() ?>/js/jquery.webticker.min.js?<?php echo variable_get('css_js_query_string', '0') ?>"></script>
 
     <script type="text/javascript" src="<?php echo base_path() . path_to_theme() ?>/js/moment-with-locales.js?<?php echo variable_get('css_js_query_string', '0') ?>"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel-autoscroll.js"></script>
+
     <script>
       function render_ar_date(date_en) {
         if (moment(date_en).isValid()) {
@@ -365,7 +368,51 @@
           return date_en;
         }
       }
-      $(document).ready(function () {
+
+
+      (function ($) {
+        $(function () {
+          $('#hero').jcarousel().jcarouselAutoscroll({
+            interval: 5000,
+            target: '+=1',
+            autostart: true
+          });
+
+          $('.jcarousel-control-prev')
+                  .on('jcarouselcontrol:active', function () {
+                    $(this).removeClass('inactive');
+                  })
+                  .on('jcarouselcontrol:inactive', function () {
+                    $(this).addClass('inactive');
+                  })
+                  .jcarouselControl({
+                    target: '-=1'
+                  });
+
+          $('.jcarousel-control-next')
+                  .on('jcarouselcontrol:active', function () {
+                    $(this).removeClass('inactive');
+                  })
+                  .on('jcarouselcontrol:inactive', function () {
+                    $(this).addClass('inactive');
+                  })
+                  .jcarouselControl({
+                    target: '+=1'
+                  });
+        });
+        $("#hero2").owlCarousel({
+        items:1,
+                singleItem:true,
+                autoPlay:true,
+                pagination:false,
+                navigation: true,
+                navigationText:[
+                        "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
+                        "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
+                ]
+      });
+      })(jQuery);
+              $(document).ready(function () {
         $("#webticker").webTicker({
           direction: "right", //if to move left or right
           moving: true, //weather to start the ticker in a moving or static position
@@ -373,7 +420,6 @@
           duplicate: false, //if there is less items then visible on the ticker you can duplicate the items to make it continuous
           hoverpause: false
         });
-
 
         setTimeout(function () {
           $(".show-episodes li p").each(function () {
@@ -526,33 +572,6 @@
 
       });
       jQuery(document).ready(function () {
-        jQuery("#owl-hero").owlCarousel({
-          items: 1,
-          direction: 'rtl',
-          singleItem: true,
-          navigation: true,
-          navigationText: [
-            "<i class='icon-chevron-left icon-white'><</i>",
-            "<i class='icon-chevron-right icon-white'>></i>"
-          ],
-          pagination: false,
-          theme: 'my-owl-theme'
-        });
-
-        jQuery("#owl-hero2").owlCarousel({
-          items: 1,
-          direction: 'rtl',
-          singleItem: true,
-          navigation: true,
-          navigationText: [
-            "<i class='icon-chevron-left icon-white'>></i>",
-            "<i class='icon-chevron-right icon-white'><</i>"
-          ],
-          pagination: false,
-          theme: 'my-owl-theme',
-        });
-        jQuery('.owl-wrapper').css('width', 'auto');
-
 
         $(".mpu").bind("click", function () {
           var bannerurl = $(".mpu div.content p a").attr("href");
