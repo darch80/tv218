@@ -401,18 +401,18 @@
                   });
         });
         $("#hero2").owlCarousel({
-        items:1,
-                singleItem:true,
-                autoPlay:true,
-                pagination:false,
-                navigation: true,
-                navigationText:[
-                        "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
-                        "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
-                ]
-      });
+          items: 1,
+          singleItem: true,
+          autoPlay: true,
+          pagination: false,
+          navigation: true,
+          navigationText: [
+            "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
+            "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
+          ]
+        });
       })(jQuery);
-              $(document).ready(function () {
+      $(document).ready(function () {
         $("#webticker").webTicker({
           direction: "right", //if to move left or right
           moving: true, //weather to start the ticker in a moving or static position
