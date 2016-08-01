@@ -553,7 +553,7 @@
         $("#liveshow-rail .toplisting").html(html);
       }
       jQuery(function () {
-        var liveurl = 'ajax/live/load';
+        var liveurl = '?q=ajax/live/load';
         console.log(liveurl);
         $.get(liveurl, function (data) {
           renderlive(data);

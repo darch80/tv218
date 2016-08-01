@@ -196,15 +196,6 @@
             <div id="liveshow-rail">
               <div class="toplisting"></div>
             </div>
-            <div id="vod-today" class="grid-content">
-              <ul>
-                <li>
-                  <a href=""><img src="<?php echo base_path() . path_to_theme() . '/assets/sample.jpg' ?>" /></a>
-                  <h4>ساعة تيكنو</h4>
-                  <p>هل هناك ضرورة ملحة لتجديد ما يُعرف بالخطاب الديني، وكيف؟ ثم كيف تُسكّن </p>
-                </li>
-              </ul>
-            </div>
           </section>
         </div>
       </div>
