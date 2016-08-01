@@ -229,6 +229,10 @@ function tv218_preprocess_page(&$vars)
     $vars['theme_hook_suggestions'][] = '__opinions';
   }
   /* --- Taxonomy Term pages ----- */
+  $most_view_url = "http://admin.mangomolo.com/analytics/index.php/nand/most?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
+  $mostview_data = file_get_contents($most_view_url);
+  $mostview_data = json_decode($mostview_data);
+  $vars['mv'] = $mostview_data;
 }
 
 function tv218_preprocess_node(&$vars)

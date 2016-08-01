@@ -1,3 +1,6 @@
+<?php
+global $base_url;
+?>
 <div id="hero" class="jcarousel">
   <ul>
     <?php foreach ($nq['hero'] as $n): ?>
@@ -143,51 +146,71 @@
         <div class="cell-3" style="padding: 0px;">
           <div class="strike-through-header" style="overflow: hidden;">
             <h3 class="bold">New Videos API</h3>
-            <ol class="topfive">
-              <li>
-                <a href="#">
-                  <span>1</span>
-                  "رئاسي الوفاق" يعلن من راس لانوف استئناف "تصدير النفط" 
-                  <small>7,030</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>2</span>
-                  غادة عبدالرازق تظهر بلا"ماكياج" وتثير ردودا.. شاهد
-                  <small>7,030</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>3</span>
-                  قادة في داعش يتنقلون سرا على الحدود بين ليبيا وتونس
-                  <small>7,030</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>4</span>
-                  السؤال الكبير: ماذا يحصل في العاصمة طرابلس؟
-                  <small>7,030</small>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span>5</span>
-                  "فوشيك" بـ 10 مليارات دولار للتواصل بين "الإرهابيين"
-                  <small>7,030</small>
-                </a>
-              </li>
+            <ol class="topfive" id="vertical-slide">
+              <?php
+              for ($i = 0; $i < 5; $i++) {
+                $img = "http://admin.mangomolo.com/analytics/" . $mv[$i]->img;
+                $title = $mv[$i]->title_ar;
+                $cat_name = $mv[$i]->cat_ar;
+                $views = $mv[$i]->today_views;
+                $date_temp = strtotime($mv[$i]->publish_time);
+                $date = render_ar_date($date_temp);
+                $id = $mv[$i]->id;
+                $url = $base_url . "/episode/" . $id;
+                ?>
+                <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0==$i)?"active":""?>">
+                  <span><?php echo $i + 1 ?></span>
+                  <h4><?php echo $title ?></h4>
+                  <small><?php echo $views; ?></small>
+                </li>    
+              <?php } ?> 
+              <!--              <li>
+                              "رئاسي الوفاق" يعلن من راس لانوف استئناف "تصدير النفط" 
+                              <small>7,030</small>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <span>2</span>
+                                غادة عبدالرازق تظهر بلا"ماكياج" وتثير ردودا.. شاهد
+                                <small>7,030</small>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <span>3</span>
+                                قادة في داعش يتنقلون سرا على الحدود بين ليبيا وتونس
+                                <small>7,030</small>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <span>4</span>
+                                السؤال الكبير: ماذا يحصل في العاصمة طرابلس؟
+                                <small>7,030</small>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <span>5</span>
+                                "فوشيك" بـ 10 مليارات دولار للتواصل بين "الإرهابيين"
+                                <small>7,030</small>
+                              </a>
+                            </li>-->
             </ol>
           </div>
         </div>
         <div style="float: right;width: 66%;">
-          <img src="sites/all/themes/tv218/assets/sample-video.png" width="100%" />
+          <div class="center-cropped-slide" style="background-image: url(http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>)">
+            <a href="<?php echo $base_url . "/episode/" . $mv[0]->id; ?>">
+              <img src="http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>" />
+              <i class="fa fa-play" data-reactid=".0.1.2.0.1"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="cell-1" style="background: #fff;">
+        <div class="cell-1">
           <section class="videos-today">
             <div class="">
               <div class="bth-mbshr2"><a href="#" class="bth-mbshr">البث المباشر &nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a></div>
@@ -195,15 +218,6 @@
             </div>
             <div id="liveshow-rail">
               <div class="toplisting"></div>
-            </div>
-            <div id="vod-today" class="grid-content">
-              <ul>
-                <li>
-                  <a href=""><img src="<?php echo base_path() . path_to_theme() . '/assets/sample.jpg' ?>" /></a>
-                  <h4>ساعة تيكنو</h4>
-                  <p>هل هناك ضرورة ملحة لتجديد ما يُعرف بالخطاب الديني، وكيف؟ ثم كيف تُسكّن </p>
-                </li>
-              </ul>
             </div>
           </section>
         </div>

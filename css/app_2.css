@@ -3700,19 +3700,28 @@ ol.topfive {
   direction: rtl;
 }
 ol.topfive li {
+  /*  padding: 1.21875em 0 0.8125em 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    color: #fff;
+    background-color: #3b3b3b;*/
   color: #fff;
   background-color: #3b3b3b;
+  /*padding: 1.21875em 0 0.8125em 0;*/
   padding: 0 1.625em 0.8125em 1.625em;
 }
-ol.topfive li:hover, 
-ol.topfive li.active {
+ol.topfive li:hover, ol.topfive li.active {
   color: #3b3b3b;
   background-color: #00ffff;
 }
 ol.topfive li a {
   color: #fff;
 }
-ol.topfive li span {
+ol.topfive li a span {
   color: #00ffff;
   margin-left: 10px;
   font-size: 2em;
@@ -3720,19 +3729,20 @@ ol.topfive li span {
   line-height: 1.51667em;
   float: right;
 }
-ol.topfive li small {
+ol.topfive > small {
   color: #00ffff;
   margin-right: 35px;
   font-size: 0.7em;
 }
-ol.topfive li:hover, 
-ol.topfive li:hover > span, 
-ol.topfive li:hover > small,
-ol.topfive li.active , 
-ol.topfive li.active > span, 
-ol.topfive li.active > small {
+ol.topfive li:hover a, 
+ol.topfive li:hover a span, 
+ol.topfive li:hover a small {
+ol.topfive li.active a, 
+ol.topfive li.active a span, 
+ol.topfive li.active a small {
   color: #3b3b3b;
 }
+
 
 .opinions {
   padding: 1.21875em 5px;
@@ -4553,7 +4563,6 @@ body.node-type-author .profile .author p {
 }
 .center-cropped-slide {
   width: 100%;
-  height: 517px;
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
@@ -4569,13 +4578,6 @@ body.node-type-author .profile .author p {
   filter: alpha(opacity=0);
   /* modern browsers */
   opacity: 0;
-}
-.center-cropped-slide i{
-  position: absolute;
-  top: 250px;
-  right: 300px;
-  font-size: 2em;
-  color: #fff;
 }
 .w-three-col {
   max-width: 1270px;
@@ -5652,11 +5654,11 @@ article.snippet .text h3{font-size: 1em;color:#3b3b3b;margin: 0px;}
 }
 #webticker li{float: right;}
 .tickercontainer
-/*width of the original container in which the ticker appears*/
+//width of the original container in which the ticker appears
 .tickercontainer .mask
-/*can be used to achieve padding within the container*/
+//can be used to achieve padding within the container
 ul.newsticker {
-  /*important to enable css3 transitions properly */
+  //important to enable css3 transitions properly 
   -webkit-transition: all 0s linear;
   -moz-transition: all 0s linear;
   -o-transition: all 0s linear;
@@ -5751,8 +5753,7 @@ ul.newsticker {
   font-weight: 600;
 }
 .videos-today{
-  padding: 10px 35px;
-  background-color: #fff;
+  padding: 0px 35px;
 }
 .videos-today h3{
   font-weight: 600;
