@@ -67,6 +67,18 @@ global $base_url;
           <?php
         endforeach;
         ?>
+        <div class="cell-3">
+          <div class="scldv fcbk"><span class="sclcn"><i class="fa fa-facebook"></i></span>
+            <p>
+              درجات الحرارة المرتفعة تدفع البغداديين للخروج ضد الحكومة 
+            </p>
+          </div>
+          <div class="scldv twttr"><span class="sclcn"><i class="fa fa-twitter"></i></span>
+            <p> 
+              درجات الحرارة المرتفعة تدفع البغداديين للخروج ضد الحكومة 
+            </p>
+          </div>
+        </div>
       </div>
       <div class="row">
         <?php for ($i = count($menus['promoted']) - 1; $i >= 0; $i--): ?>
@@ -158,7 +170,7 @@ global $base_url;
                 $id = $mv[$i]->id;
                 $url = $base_url . "/episode/" . $id;
                 ?>
-                <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0==$i)?"active":""?>">
+                <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
                   <span><?php echo $i + 1 ?></span>
                   <h4><?php echo $title ?></h4>
                   <small><?php echo $views; ?></small>
