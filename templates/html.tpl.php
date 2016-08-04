@@ -206,7 +206,7 @@
               <div class="weather-temperature-ny"></div>
             </div>
             <div class="icon ny">
-              <img src="" class="weather-icon-ny" alt="Weather Icon"/>
+              <img src="" class="weather-icon-ny" alt=""/>
             </div>
           </div>
         </div>
