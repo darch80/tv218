@@ -342,115 +342,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel-autoscroll.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-      function render_ar_date(date_en) {
-        if (moment(date_en).isValid()) {
-          moment.locale("ar-sa");
-          var ar_month = moment(date_en).format("MMMM");
-          var ar_day = moment(date_en).format("dddd");
-          var am_pm = moment(date_en).format("A");
-          moment.locale("en");
-          var en_date = moment(date_en).format("DD");
-          var en_date = moment(date_en).format("DD");
-          var en_year = moment(date_en).format("YYYY");
-          return ar_day + " " + en_date + " / " + ar_month + " / " + en_year;
-        } else {
-          return date_en;
-        }
-      }
 
-
-      (function ($) {
-        $(function () {
-          $('#hero').jcarousel().jcarouselAutoscroll({
-            interval: 5000,
-            target: '+=1',
-            autostart: true
-          });
-
-          $('.jcarousel-control-prev')
-                  .on('jcarouselcontrol:active', function () {
-                    $(this).removeClass('inactive');
-                  })
-                  .on('jcarouselcontrol:inactive', function () {
-                    $(this).addClass('inactive');
-                  })
-                  .jcarouselControl({
-                    target: '-=1'
-                  });
-
-          $('.jcarousel-control-next')
-                  .on('jcarouselcontrol:active', function () {
-                    $(this).removeClass('inactive');
-                  })
-                  .on('jcarouselcontrol:inactive', function () {
-                    $(this).addClass('inactive');
-                  })
-                  .jcarouselControl({
-                    target: '+=1'
-                  });
-        });
-        $("#hero2").owlCarousel({
-          items: 1,
-          singleItem: true,
-          autoPlay: true,
-          pagination: false,
-          navigation: true,
-          navigationText: [
-            "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
-            "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
-          ]
-        });
-        //video slider
-        var cur = 0, // Start Slide Index. We'll use ++cur to increment index
-                pau = 6000, // Pause Time (ms)
-                fad = 500, // Fade Time (ms)
-                $ga = jQuery('.center-cropped-slide'), // Cache Gallery Element
-                $sl = jQuery('#vertical-slide li'), // Cache Slides Elements
-                tot = $sl.length, // We'll use cur%tot to reset to first slide
-                itv;                  // Used to clear on mouseenter
-
-//    $sl.hide().eq(cur).show(); // Hide all Slides but desired one
-
-        function stopFn() {
-          clearInterval(itv);
-        }
-        function loopFn() {
-          var n = $ga.queue("slideFn");
-          itv = setInterval(slideFn, pau);
-        }
-        $sl.click(function (e) {
-          e.preventDefault();
-          cur = $sl.index(jQuery(this)) - 1;
-          slideFn();
-        });
-        function slideFn() {
-          ++cur;
-          $sl.removeClass('active').eq(cur % tot).addClass('active');
-          var newImage = $sl.eq(cur % tot).data('img');
-          var newURL = $sl.eq(cur % tot).data('url');
-          $ga
-                  .hide("slide", {direction: "up"}, fad)
-                  .show("slide", {direction: "down"}, fad);
-          setTimeout(function () {
-            $ga.css('background-image', 'url(' + newImage + ')');
-            $ga.children('img').attr('src', newImage);
-            $ga.children('a').attr('href', newURL);
-          }, fad);
-        }
-//        $ga.hover(stopFn, loopFn) ;
-
-//        loopFn(); // Finally, Start
-      })(jQuery);
+    <script type="text/javascript">
       $(document).ready(function () {
-        $("#webticker").webTicker({
-          direction: "right", //if to move left or right
-          moving: true, //weather to start the ticker in a moving or static position
-          startEmpty: true, //weather to start with an empty or pre-filled ticker
-          duplicate: false, //if there is less items then visible on the ticker you can duplicate the items to make it continuous
-          hoverpause: false
-        });
-
         setTimeout(function () {
           $(".show-episodes li p").each(function () {
             var date_en = $.trim($(this).html());
@@ -487,56 +381,25 @@
           });
         }, 500);
       });
-      /*var current_ele = null;     
-       $(document).ready(function(){  
-       setTimeout(function(){    
-       $(".show-episodes li a").click(function(e){ 
-       //$(".show-episodes li a").each(function(e){     
-       e.preventDefault();    
-       var vid = $(this).attr("href").split("/")[2];
-       current_ele = this;    
-       if(vid!=''){
-       var playurl = "<?php echo $base_url; ?>/load-ajax/video/"+vid+"/173";    
-       $.get( playurl, function( data ) {
-       renderPlayer(data,current_ele);
-       });
-       
-       }
-       });
-       },1000);
-       
-       setTimeout(function(){    
-       $(".show-featured li a").click(function(e){ 
-       //$(".show-episodes li a").each(function(e){     
-       e.preventDefault();    
-       var vid = $(this).attr("href").split("/")[2];
-       current_ele = this;    
-       if(vid!=''){
-       var playurl = "<?php echo $base_url; ?>/load-ajax/video/"+vid+"/336";    
-       $.get( playurl, function( data ) {
-       renderPlayer(data,current_ele);
-       });
-       
-       }
-       });
-       },1000);    
-       });
-       
-       function renderPlayer(playerurl,element){
-       
-       
-       var html = '<div style="display:none" class="video_player">'+playerurl+'</div>';
-       $(element).append(html);
-       setTimeout(function(){
-       $(current_ele).find("img").hide();
-       $(current_ele).find(".fa-play").hide();
-       $(current_ele).find(".video_player").show();
-       // $(".video_player iframe").trigger("click");
-       },500);
-       }*/
     </script>
 
-    <script>
+    <script type="text/javascript">
+      function render_ar_date(date_en) {
+        if (moment(date_en).isValid()) {
+          moment.locale("ar-sa");
+          var ar_month = moment(date_en).format("MMMM");
+          var ar_day = moment(date_en).format("dddd");
+          var am_pm = moment(date_en).format("A");
+          moment.locale("en");
+          var en_date = moment(date_en).format("DD");
+          var en_date = moment(date_en).format("DD");
+          var en_year = moment(date_en).format("YYYY");
+          return ar_day + " " + en_date + " / " + ar_month + " / " + en_year;
+        } else {
+          return date_en;
+        }
+      }
+
       function reinitvideoblk() {
         var owl = jQuery('.owl-carousel');
         var owlInstance = owl.data('owlCarousel');
@@ -648,7 +511,97 @@
     </script>
 
     <?php if ($is_front) { ?>
-      <script>
+      <script type="text/javascript">
+        // Slideshows
+        (function ($) {
+          $('#hero').jcarousel().jcarouselAutoscroll({
+            interval: 5000,
+            target: '+=1',
+            autostart: true
+          });
+
+          $('.jcarousel-control-prev')
+                  .on('jcarouselcontrol:active', function () {
+                    $(this).removeClass('inactive');
+                  })
+                  .on('jcarouselcontrol:inactive', function () {
+                    $(this).addClass('inactive');
+                  })
+                  .jcarouselControl({
+                    target: '-=1'
+                  });
+
+          $('.jcarousel-control-next')
+                  .on('jcarouselcontrol:active', function () {
+                    $(this).removeClass('inactive');
+                  })
+                  .on('jcarouselcontrol:inactive', function () {
+                    $(this).addClass('inactive');
+                  })
+                  .jcarouselControl({
+                    target: '+=1'
+                  });
+          $("#hero2").owlCarousel({
+            items: 1,
+            singleItem: true,
+            autoPlay: true,
+            pagination: false,
+            navigation: true,
+            navigationText: [
+              "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
+              "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
+            ]
+          });
+          //video slider
+          var cur = 0, // Start Slide Index. We'll use ++cur to increment index
+                  pau = 6000, // Pause Time (ms)
+                  fad = 500, // Fade Time (ms)
+                  $ga = jQuery('.center-cropped-slide'), // Cache Gallery Element
+                  $sl = jQuery('#vertical-slide li'), // Cache Slides Elements
+                  tot = $sl.length, // We'll use cur%tot to reset to first slide
+                  itv;                  // Used to clear on mouseenter
+
+  //    $sl.hide().eq(cur).show(); // Hide all Slides but desired one
+
+          function stopFn() {
+            clearInterval(itv);
+          }
+          function loopFn() {
+            var n = $ga.queue("slideFn");
+            itv = setInterval(slideFn, pau);
+          }
+          $sl.click(function (e) {
+            e.preventDefault();
+            cur = $sl.index(jQuery(this)) - 1;
+            slideFn();
+          });
+          function slideFn() {
+            ++cur;
+            $sl.removeClass('active').eq(cur % tot).addClass('active');
+            var newImage = $sl.eq(cur % tot).data('img');
+            var newURL = $sl.eq(cur % tot).data('url');
+            $ga
+                    .hide("slide", {direction: "up"}, fad)
+                    .show("slide", {direction: "down"}, fad);
+            setTimeout(function () {
+              $ga.css('background-image', 'url(' + newImage + ')');
+              $ga.children('img').attr('src', newImage);
+              $ga.children('a').attr('href', newURL);
+            }, fad);
+          }
+        })(jQuery);
+      </script>
+      <script type="text/javascript">
+        $("#webticker").webTicker({
+          direction: "right", //if to move left or right
+          moving: true, //weather to start the ticker in a moving or static position
+          startEmpty: true, //weather to start with an empty or pre-filled ticker
+          duplicate: false, //if there is less items then visible on the ticker you can duplicate the items to make it continuous
+          hoverpause: false
+        });
+      </script>
+
+      <script type="text/javascript">
         jQuery(window).bind('orientationchange resize', function (event) {
           if (event.orientation) {
             if (event.orientation == 'landscape') {
@@ -742,9 +695,6 @@
             jQuery('#live-broadcast').css('background', 'none');
           });
         });
-
-
-
       </script>
     <?php } ?>
 

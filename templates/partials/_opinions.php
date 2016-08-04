@@ -1,7 +1,8 @@
 <div class="opinions">
   <?php
   for ($i = 0; $i < 3; $i++) {
-    $opn = $nq['opinions'][$i]
+    $opn = $nq['opinions'][$i];
+    $a = get_author($opn);
     ?>
     <div class="opinion">
       <div class="author">
@@ -22,7 +23,6 @@
       </a>
 
       <p><?php echo render_teaser($opn, 90); ?> ...</p>
-      <?php $a = get_author($opn); ?>
 
     </div>
 

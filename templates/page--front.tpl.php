@@ -176,39 +176,6 @@ global $base_url;
                   <small><?php echo $views; ?></small>
                 </li>    
               <?php } ?> 
-              <!--              <li>
-                              "رئاسي الوفاق" يعلن من راس لانوف استئناف "تصدير النفط" 
-                              <small>7,030</small>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <span>2</span>
-                                غادة عبدالرازق تظهر بلا"ماكياج" وتثير ردودا.. شاهد
-                                <small>7,030</small>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <span>3</span>
-                                قادة في داعش يتنقلون سرا على الحدود بين ليبيا وتونس
-                                <small>7,030</small>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <span>4</span>
-                                السؤال الكبير: ماذا يحصل في العاصمة طرابلس؟
-                                <small>7,030</small>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <span>5</span>
-                                "فوشيك" بـ 10 مليارات دولار للتواصل بين "الإرهابيين"
-                                <small>7,030</small>
-                              </a>
-                            </li>-->
             </ol>
           </div>
         </div>
@@ -243,7 +210,7 @@ global $base_url;
         <div class="cell-1">
           <div id="live-broadcast">
             <a href="#" class="bth-mbshr">
-              <h3>البث المباشر 
+              <h3 style="direction: rtl;font-size: 31px;font-weight: bold;">البث المباشر 
                 <img src="<?php echo base_path() . path_to_theme() ?>/assets/play.png" width="28px"/>
               </h3>
             </a>
@@ -251,43 +218,38 @@ global $base_url;
         </div>
       </div>
       <div class="row">
-        <div class="cell-1">
+        <div class="cell-1" style="padding-bottom: 0px;">
           <div class="strike-through-header">
             <h3 class="bold">أفضل خمس مقالات</h3>
             <ol class="topfive">
               <li>
                 <a href="/content/%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%86-%D8%B1%D8%A7%D8%B3-%D9%84%D8%A7%D9%86%D9%88%D9%81-%D8%A7%D8%B3%D8%AA%D8%A6%D9%86%D8%A7%D9%81-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7">
                   <span>1</span>
-                  "رئاسي الوفاق" يعلن من راس لانوف استئناف "تصدير النفط" 
-                  <small>7,030</small>
+                  لا مواعيد غرامية .. لا أصدقاء .. لا إجازات .. تعرف على أصغر مليارديرة
                 </a>
               </li>
               <li>
                 <a href="content/%D8%BA%D8%A7%D8%AF%D8%A9-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B2%D9%82-%D8%AA%D8%B8%D9%87%D8%B1-%D8%A8%D9%84%D8%A7-%D9%85%D8%A7%D9%83%D9%8A%D8%A7%D8%AC-%D9%88%D8%AA%D8%AB%D9%8A%D8%B1-%D8%B1%D8%AF%D9%88%D8%AF%D8%A7-%D8%B4%D8%A7%D9%87%D8%AF">
                   <span>2</span>
-                  غادة عبدالرازق تظهر بلا"ماكياج" وتثير ردودا.. شاهد
-                  <small>7,030</small>
+                  "الرئاسي" يدين تفجير "القوارشة" بعد 24 ساعة من وقوعه
                 </a>
               </li>
               <li>
                 <a href="content/%D9%82%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%AF%D8%A7%D8%B9%D8%B4-%D9%8A%D8%AA%D9%86%D9%82%D9%84%D9%88%D9%86-%D8%B3%D8%B1%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A8%D9%8A%D9%86-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%88%D8%AA%D9%88%D9%86%D8%B3">
                   <span>3</span>
-                  قادة في داعش يتنقلون سرا على الحدود بين ليبيا وتونس
-                  <small>7,030</small>
+                  لجنة نيابية: الضربات الأميركية "خروقات".. ولأهداف "انتخابية"
                 </a>
               </li>
               <li>
                 <a href="content/%D8%A7%D9%84%D8%B3%D8%A4%D8%A7%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%AD%D8%B5%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D8%9F">
                   <span>4</span>
-                  السؤال الكبير: ماذا يحصل في العاصمة طرابلس؟
-                  <small>7,030</small>
+                  "الحكومة الرابعة" تثير غضبا شعبيا واسعا داخل ليبيا 
                 </a>
               </li>
               <li>
                 <a href="content/%D9%81%D9%88%D8%B4%D9%8A%D9%83-%D8%A8%D9%80-10-%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%84%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D9%8A%D9%86">
                   <span>5</span>
-                  "فوشيك" بـ 10 مليارات دولار للتواصل بين "الإرهابيين"
-                  <small>7,030</small>
+                  مؤسسة النفط "تُشكك" بالاتفاق مع "الرئاسي" 
                 </a>
               </li>
               <?php foreach ($popular as $k => $p): ?>
@@ -295,7 +257,6 @@ global $base_url;
                   <a href="<?php echo render_href($p->nid) ?>">
                     <span><?php echo $k + 1 ?></span>
                     <?php echo $p->node_title ?>
-                    <small>7,030</small>
                   </a>
                 </li>
               <?php endforeach ?>
@@ -304,7 +265,7 @@ global $base_url;
         </div>
       </div>
       <div class="row">
-        <div class="cell-1">
+        <div class="cell-1" style="padding-top: 0px;">
           <?php include_once 'partials/_opinions.php' ?>
         </div>
       </div>
@@ -331,5 +292,3 @@ global $base_url;
     </div>
   </div>
 </div>
-
-

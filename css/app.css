@@ -3390,36 +3390,40 @@ h3.search-title {
 }
 .hero .headline-overlay {
   position: absolute;
-  bottom: 55px;
-  right: 53px;
+  bottom: 52px;
+  right: 59px;
 }
 .hero .headline-overlay h3 {
-  font-size: 20px;
+  font-size: 24px;
   color: #898989;
   background: rgba(255,255,255,0.9);
-  padding: 15px;
+  padding: 7px 15px 15px 15px;
   width: 1152px;
+  height: 95px;
 }
 .hero .headline-overlay h3 a{
-  font-size: 1.25em;
+  font-size: 24px;
   line-height: 2.6em;
   color: #898989;
   padding: 0.1625em 15px;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h3 {
-    font-size:18px;
+    font-size:24px;
   }
 }
 .hero .headline-overlay h2 {
-  font-size: 1.75em;
-  line-height: 1.85714em;
+  color: #00ffff;
+  font-size: 24px;
   display: inline-block;
   right: 30px;
   font-weight: bold;
   background: #3b3b3b;
-  padding: 15px;
+  padding: 20px;
   width: 187px;
+}
+.hero .headline-overlay h2 a{
+  color: #00ffff;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h2 {
@@ -3676,14 +3680,19 @@ ol.topfive {
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #fff;
   direction: rtl;
+  margin-top: 20px;
 }
 ol.topfive li {
   color: #fff;
   background-color: #3b3b3b;
-  padding: 0 1.625em 0.8125em 1.625em;
+  padding: 15px;
+  font-size: 18px;
+  margin-bottom: 7px;
 }
 ol.topfive li:hover, 
-ol.topfive li.active {
+ol.topfive li:hover a, 
+ol.topfive li.active,
+ol.topfive li.active a {
   color: #3b3b3b;
   background-color: #00ffff;
 }
@@ -3691,12 +3700,13 @@ ol.topfive li a {
   color: #fff;
 }
 ol.topfive li span {
+  padding-top: 7px;
   color: #00ffff;
   margin-left: 10px;
-  font-size: 2em;
-  font-weight: 600;
-  line-height: 1.51667em;
+  font-size: 29px;
+  font-family: "Avenir Next LT Pro Demi Condensed";
   float: right;
+  height: 80px;
 }
 ol.topfive li small {
   color: #00ffff;
@@ -3704,10 +3714,10 @@ ol.topfive li small {
   font-size: 0.7em;
 }
 ol.topfive li:hover, 
-ol.topfive li:hover > span, 
+ol.topfive li:hover span, 
 ol.topfive li:hover > small,
 ol.topfive li.active , 
-ol.topfive li.active > span, 
+ol.topfive li.active span, 
 ol.topfive li.active > small {
   color: #3b3b3b;
 }
@@ -3717,7 +3727,7 @@ ol.topfive li.active > small {
   background: white;
 }
 .opinions .opinion .author {
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   border-bottom: 1px solid #e8e8e8;
 }
 .opinions .opinion p {
@@ -3746,11 +3756,16 @@ ol.topfive li.active > small {
 .author .a-info .a-name {
   color: #333;
 }
+.author .a-info .a-name a{
+  font-size: 16px;
+  font-weight: bold;
+}
 .author .a-info .a-title {
   color: #999999;
 }
+.a-title{min-height: 15px;}
 .author .a-img {
-  width: 50px !important;
+  width: 55px !important;
   border-radius: 50%;
 }
 
@@ -4498,11 +4513,11 @@ body.node-type-author .profile .author p {
 
 .strike-through-header {
   background: #3b3b3b;
+  padding-bottom: 40px;
 }
 .strike-through-header h3 {
-  font-size: 1.2em;
-  line-height: 2.16667em;
-  margin: 25px 55px 0 0;
+  font-size: 18px;
+  margin: 17px 49px 0 0;
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #00ffff;
   font-weight: normal;
@@ -5614,7 +5629,7 @@ article.snippet .text h3{font-size: 1em;color:#3b3b3b;margin: 0px;}
 .news-ticker label{
   background-color: #ed1c24;
   color: #fff;
-  padding: 5px 15px 15px 30px;
+  padding: 5px 15px 15px 37px;
   font-size: 25px;
   font-weight: bold;
   float: right;
