@@ -2,7 +2,7 @@
 <html lang="ar">
   <head>
     <meta charset="utf-8">
-    <base href="<?php echo $GLOBALS['base_path']; ?>"/>
+    <base href="<?php echo base_path(); ?>"/>
     <link rel="icon" type="image/png" href="<?php echo base_path() . path_to_theme(); ?>/favicon.png">
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
@@ -446,7 +446,7 @@
         $("#liveshow-rail .toplisting").html(html);
       }
       jQuery(function () {
-        var liveurl = '?q=ajax/live/load';
+        var liveurl = '<?php echo base_path(); ?>ajax/live/load';
         console.log(liveurl);
         $.get(liveurl, function (data) {
           renderlive(data);

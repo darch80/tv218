@@ -154,40 +154,42 @@ global $base_url;
           </div>
         <?php endfor; ?>
       </div>
-      <div class="row" style="overflow: hidden; margin-bottom: 20px; max-height: 517px;padding: 15px;">
-        <div class="cell-3" style="padding: 0px;">
-          <div class="strike-through-header" style="overflow: hidden;">
-            <h3 class="bold">New Videos API</h3>
-            <ol class="topfive" id="vertical-slide">
-              <?php
-              for ($i = 0; $i < 5; $i++) {
-                $img = "http://admin.mangomolo.com/analytics/" . $mv[$i]->img;
-                $title = $mv[$i]->title_ar;
-                $cat_name = $mv[$i]->cat_ar;
-                $views = $mv[$i]->today_views;
-                $date_temp = strtotime($mv[$i]->publish_time);
-                $date = render_ar_date($date_temp);
-                $id = $mv[$i]->id;
-                $url = $base_url . "/episode/" . $id;
-                ?>
-                <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
-                  <span><?php echo $i + 1 ?></span>
-                  <h4><?php echo $title ?></h4>
-                  <small><?php echo $views; ?></small>
-                </li>    
-              <?php } ?> 
-            </ol>
+      <?php if (is_array($mv)) { ?>
+        <div class="row" style="overflow: hidden; margin-bottom: 20px; max-height: 517px;padding: 15px;">
+          <div class="cell-3" style="padding: 0px;">
+            <div class="strike-through-header" style="overflow: hidden;">
+              <h3 class="bold">أهم مقاطع الفيديو</h3>
+              <ol class="topfive" id="vertical-slide">
+                <?php
+                for ($i = 0; $i < 5; $i++) {
+                  $img = "http://admin.mangomolo.com/analytics/" . $mv[$i]->img;
+                  $title = $mv[$i]->title_ar;
+                  $cat_name = $mv[$i]->cat_ar;
+                  $views = $mv[$i]->today_views;
+                  $date_temp = strtotime($mv[$i]->publish_time);
+                  $date = render_ar_date($date_temp);
+                  $id = $mv[$i]->id;
+                  $url = $base_url . "/episode/" . $id;
+                  ?>
+                  <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
+                    <span><?php echo $i + 1 ?></span>
+                    <h4><?php echo $title ?></h4>
+                    <small><?php echo $views; ?></small>
+                  </li>    
+                <?php } ?> 
+              </ol>
+            </div>
+          </div>
+          <div style="float: right;width: 66%;">
+            <div class="center-cropped-slide" style="background-image: url(http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>)">
+              <a href="<?php echo $base_url . "/episode/" . $mv[0]->id; ?>">
+                <img src="http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>" />
+                <i class="fa fa-play" data-reactid=".0.1.2.0.1"></i>
+              </a>
+            </div>
           </div>
         </div>
-        <div style="float: right;width: 66%;">
-          <div class="center-cropped-slide" style="background-image: url(http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>)">
-            <a href="<?php echo $base_url . "/episode/" . $mv[0]->id; ?>">
-              <img src="http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>" />
-              <i class="fa fa-play" data-reactid=".0.1.2.0.1"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
       <div class="row">
         <div class="cell-1">
           <section class="videos-today">
