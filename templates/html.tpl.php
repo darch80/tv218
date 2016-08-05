@@ -200,13 +200,22 @@
             <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
           </ul>
-          <div class="weather">
+          <!--          <div class="weather">
+                      <div class="info">
+                        <div>القاهره</div>
+                        <div class="weather-temperature-ny"></div>
+                      </div>
+                      <div class="icon ny">
+                        <img src="" class="weather-icon-ny" alt=""/>
+                      </div>
+                    </div>-->
+          <div class="weather-sample">
             <div class="info">
               <div>القاهره</div>
-              <div class="weather-temperature-ny"></div>
+              <div class="weather-temperature-sample" style="visibility: visible;">34°</div>
             </div>
-            <div class="icon ny">
-              <img src="" class="weather-icon-ny" alt=""/>
+            <div class="icon sample" style="visibility: visible;">
+              <img alt="" class="weather-icon" src="/218tv/sites/all/themes/tv218/assets/weather/day/clouds.png" height="30px">
             </div>
           </div>
         </div>

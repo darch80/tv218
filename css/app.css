@@ -4450,36 +4450,46 @@ body.node-type-author .profile .author p {
   overflow: hidden;
   *zoom: 1;
 }
+.weather-sample, 
 .weather {
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #ffffff;
   float: right;
   position: relative;
 }
+.weather-sample .info,
 .weather .info{
   position: absolute;
   top:-15px;
   right: 20px;
 }
+.icon.sample,
 .icon.ny{
   position: absolute;
-  top:-20px;
-  right: 45px;
+  top: 2px;
+  right: 60px;
 }
 
+.weather-sample .info > div,
 .weather .info > div{
   font-size: 10px;
 }
+.weather-sample .info div + div,
 .weather .info div + div {
   visibility: hidden;
 }
+.weather-temperature-sample,
 .weather-temperature-ny{
   font-family: 'Avenir Next LT Pro Ultra Light Condensed',sans-serif;
   font-size: 28px !important;
 }
+.weather-sample ul li .icon {
+  visibility: visible;
+}
 .weather ul li .icon {
   visibility: hidden;
 }
+.weather-sample ul li .icon img,
 .weather ul li .icon img {
   margin-right: -5px;
 }
