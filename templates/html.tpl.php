@@ -118,7 +118,7 @@
           <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                 class="fa fa-google-plus"></i></a></li>
           <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank"><i
-                class="fa fa-youtube"></i></a></li>
+                class="fa fa-youtube-play"></i></a></li>
         </ul>
         <ul>
           <?php foreach ($menus['nav'] as $index => $item): ?>
@@ -192,7 +192,7 @@
 
           <ul class="social">
             <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank">
-                <i class="fa fa-linkedin"></i></a></li>
+                <i class="fa fa-youtube-play"></i></a></li>
             <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                   class="fa fa-google-plus"></i></a></li>
             <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
@@ -292,7 +292,7 @@
               <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                     class="fa fa-google-plus"></i></a></li>
               <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank"><i
-                    class="fa fa-linkedin"></i></a></li>
+                    class="fa fa-youtube-play "></i></a></li>
             </ul>
           </div>
         </div>
@@ -561,7 +561,7 @@
                   tot = $sl.length, // We'll use cur%tot to reset to first slide
                   itv;                  // Used to clear on mouseenter
 
-  //    $sl.hide().eq(cur).show(); // Hide all Slides but desired one
+          //    $sl.hide().eq(cur).show(); // Hide all Slides but desired one
 
           function stopFn() {
             clearInterval(itv);
