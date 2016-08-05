@@ -3148,7 +3148,7 @@ input[type="submit"]:hover {
 }
 .w-header .nav ul a.livestream, .w-header .nav ul a.active {
   /*background: #26bfb5;*/
-  color: #3cfff3;
+  color: #fff;
 }
 .w-header .nav ul a:hover {
   color: #00ffff;
