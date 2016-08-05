@@ -215,7 +215,7 @@
               <div class="weather-temperature-sample" style="visibility: visible;">34°</div>
             </div>
             <div class="icon sample" style="visibility: visible;">
-              <img alt="" class="weather-icon" src="/218tv/sites/all/themes/tv218/assets/weather/day/clouds.png" height="30px">
+              <img alt="" class="weather-icon" src="<?php echo base_path() . path_to_theme() ?>/assets/weather/day/clouds.png" height="30px">
             </div>
           </div>
         </div>
