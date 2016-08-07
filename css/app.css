@@ -5601,6 +5601,7 @@ article.snippet.fxdhgt img{width: auto;}
 article.snippet .text{padding: 5px 20px 10px 10px;text-align: right;}
 article.snippet .text h3{font-size: 18px;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
 article.snippet .text p{font-size: 16px;color: #707070;}
+article.snippet .tags{position: absolute; top: 309px;}
 
 #live-broadcast{
   height: 215px;
@@ -5771,7 +5772,7 @@ ul.newsticker {
 .rightbar{
   background-color: white;
   font-size: 16px;
-  max-height: 750px;
+  height: 750px;
 }
 .rightbar ul{
   padding: 20px 0;

@@ -60,9 +60,9 @@ global $base_url;
                     <?php echo $article->title ?>
                   </a>
                 </h3>
-              <?php if ($article->field_hide_thumbnail): ?>
-                <p><?php echo $article->teaser; ?></p>
-              <?php endif; ?>
+                <?php if ($article->field_hide_thumbnail): ?>
+                  <p><?php echo $article->teaser; ?></p>
+                <?php endif; ?>
                 <ul class="tags">
                   <?php echo $article->tags['html'] ?>
                 </ul>
@@ -129,7 +129,7 @@ global $base_url;
           ?>
           <div class="cell-3">
             <article
-              class="snippet <?php echo $nq['latest'][$i]->image != '' ? '' : 'no-img ' ?><?php echo $nq['latest'][$i]->type ?> <?php echo $nq['latest'][$i]->type == 'social' ? $nq['latest'][$i]->social_channel : '' ?>">
+              class="snippet fxdhgt <?php echo $nq['latest'][$i]->image != '' ? '' : 'no-img ' ?><?php echo $nq['latest'][$i]->type ?> <?php echo $nq['latest'][$i]->type == 'social' ? $nq['latest'][$i]->social_channel : '' ?>">
                 <?php if ($nq['latest'][$i]->type == "video") { ?>
                 <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
@@ -137,7 +137,7 @@ global $base_url;
                 <img src="<?php echo $nq['latest'][$i]->image['x300'] ?>" alt="" />
               <?php endif ?>
               <div class="text">
-                <h3 class='customfont'>
+                <h3>
                   <a href="<?php echo $nq['latest'][$i]->href ?>">
                     <?php echo $nq['latest'][$i]->title ?>
                   </a>
@@ -150,11 +150,11 @@ global $base_url;
                     <div><?php echo $nq['latest'][$i]->author->title ?></div>
                   </div>
                 <?php else: ?>
-                  <ul class="tags customtag">
+                  <ul class="tags">
                     <?php echo $nq['latest'][$i]->tags['html'] ?>
                   </ul>
-                <?php endif ?>
-              </div>
+                </div>
+              <?php endif ?>
             </article>
           </div>
         <?php endfor; ?>
