@@ -5690,15 +5690,16 @@ ul.newsticker {
   margin: 0;
 }
 .hero-2 .headline {
-  color: #898989;
+  color: #333333;
   background: #ffffff;
-  height: 64px;
+  height: 100px;
   width: 100%;
-  padding: 0.1625em 15px;
+  padding: 30px 15px 0px;
 }
 .hero-2 .headline h3 {
   color: #898989;
   float: right;
+  width: 60%;
 }
 .hero-2 .headline .tags a{
   color: #898989;
@@ -5708,12 +5709,13 @@ ul.newsticker {
   float: left;
 }
 .hero-2 .headline h3 a{
-  color: #898989;
+  color: #333333;
   padding: 0.1625em 15px;
+  font-size: 18px;
 }
 @media (min-width: 640px) {
   .hero-2 .headline h3 {
-    line-height: 2em;
+    line-height: inherit;
   }
 }
 .hero-2 .headline h2 {
