@@ -5627,7 +5627,6 @@ article.snippet .tags{position: absolute; top: 309px;}
   border-radius: 4px;
 }
 #live-broadcast h3 img{
-  display: table-cell;
   vertical-align: middle;
   padding-top: 2px;
 }
