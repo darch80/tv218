@@ -49,15 +49,20 @@ global $base_url;
               <?php if ($article->type == "video") { ?>
                 <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
-              <a href="<?php echo $article->href ?>">
-                <img src="<?php echo $article->image['x300'] ?>" alt="">
-              </a>
+              <?php if (!$article->field_hide_thumbnail): ?>
+                <a href="<?php echo $article->href ?>">
+                  <img src="<?php echo $article->image['x300'] ?>" alt="">
+                </a>
+              <?php endif; ?>
               <div class="text">
                 <h3>
                   <a href="<?php echo $article->href ?>">
                     <?php echo $article->title ?>
                   </a>
                 </h3>
+              <?php if ($article->field_hide_thumbnail): ?>
+                <p><?php echo $article->teaser; ?></p>
+              <?php endif; ?>
                 <ul class="tags">
                   <?php echo $article->tags['html'] ?>
                 </ul>

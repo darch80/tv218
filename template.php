@@ -81,7 +81,10 @@ function tv218_preprocess_page(&$vars)
     // load promoted nodequeue
     $nq_featured = nodequeue_load_nodes(2, false, 0, 7);
     foreach ($nq_featured as $node) {
-      $featured[] = n_load($node->nid);
+      $hide = node_load($node->nid);
+      $ft = n_load($node->nid);
+      $ft->field_hide_thumbnail = $hide->field_hide_thumbnail["und"][0]["value"];
+      $featured[] = $ft;
     }
     $vars['nq']['featured'] = $featured;
 

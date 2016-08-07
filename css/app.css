@@ -3651,11 +3651,11 @@ article, p {
   padding-left: 0;
 }
 .tags a {
-  font-size: 0.8125em;
-  line-height: 2em;
-  color: #3b3b3b;
+  font-size: 18px;
+  line-height: 50px;
+  color: #999999;
   padding: 0em 0.75em 0.1625em;
-  border: 1px solid #d9ddd8;
+  border: 1px solid #e9ede8;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -5598,8 +5598,9 @@ article.snippet{
 
 article.snippet img{width: 100%;}
 article.snippet.fxdhgt img{width: auto;}
-article.snippet .text{padding: 10px;text-align: right;}
-article.snippet .text h3{font-size: 1em;color:#3b3b3b;margin: 0px;}
+article.snippet .text{padding: 20px 20px 10px 10px;text-align: right;}
+article.snippet .text h3{font-size: 18px;color:#3b3b3b;margin: 0 0 20px;line-height: inherit;}
+article.snippet .text p{font-size: 16px;color: #707070;}
 
 #live-broadcast{
   height: 215px;
