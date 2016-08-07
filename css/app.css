@@ -2963,7 +2963,7 @@ body {
   background: #ededed;
   font-family: "Droid Arabic Naskh", serif;
   text-align: right;
-  color: #3b3b3b;
+  color: #939393;
 }
 
 a {
@@ -3651,7 +3651,7 @@ article, p {
   padding-left: 0;
 }
 .tags a {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 50px;
   color: #999999;
   padding: 0em 0.75em 0.1625em;
@@ -3757,8 +3757,8 @@ ol.topfive li.active > small {
   color: #333;
 }
 .author .a-info .a-name a{
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
 }
 .author .a-info .a-title {
   color: #999999;
