@@ -54,7 +54,7 @@ global $base_url;
                   <img src="<?php echo $article->image['x300'] ?>" alt="">
                 </a>
               <?php endif; ?>
-              <div class="text">
+              <div class="text <?php if ($article->field_hide_thumbnail): ?>pdt20<?php endif; ?>">
                 <h3>
                   <a href="<?php echo $article->href ?>">
                     <?php echo $article->title ?>
