@@ -283,8 +283,8 @@
                 <form action="//ana.us11.list-manage.com/subscribe/post?u=dc3c27747693723b928932a2a&amp;id=37251ca25b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll">
 
-                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="أدخل بريدك الالكتروني" required style="border-radius: 4px;width: 222px;height: 36px;float: right;">
-                    <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;text-align: center;vertical-align: middle;"></div>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="أدخل بريدك الالكتروني" required style="border-radius: 4px;width: 222px;height: 36px;float: right;direction:rtl;font:"Droid Arabic Kufi",sans-serif;">
+                    <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;text-align: center;vertical-align: middle;border:0;font-weight: bold;margin-right: 20px;"></div>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_dc3c27747693723b928932a2a_37251ca25b" tabindex="-1" value=""></div>
                   </div>
