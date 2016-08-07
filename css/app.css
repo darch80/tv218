@@ -2963,7 +2963,7 @@ body {
   background: #ededed;
   font-family: "Droid Arabic Naskh", serif;
   text-align: right;
-  color: #939393;
+  color: #3b3b3b;
 }
 
 a {
@@ -3651,7 +3651,7 @@ article, p {
   padding-left: 0;
 }
 .tags a {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 50px;
   color: #999999;
   padding: 0em 0.75em 0.1625em;
@@ -3757,8 +3757,8 @@ ol.topfive li.active > small {
   color: #333;
 }
 .author .a-info .a-name a{
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
 }
 .author .a-info .a-title {
   color: #999999;
@@ -5592,7 +5592,7 @@ span.playicon-over{margin:10px;position: absolute;}
 article.snippet{
   min-height: 170px;
   background-color: #fff;
-  height: 320px;
+  height: 360px;
   overflow: hidden;
 }
 
@@ -5601,7 +5601,7 @@ article.snippet.fxdhgt img{width: auto;}
 article.snippet .text{padding: 5px 20px 10px 10px;text-align: right;}
 article.snippet .text h3{font-size: 18px;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
 article.snippet .text p{font-size: 16px;color: #707070;}
-article.snippet .tags{position: absolute; top: 277px;}
+article.snippet .tags{position: absolute; top: 309px;}
 
 #live-broadcast{
   height: 215px;
@@ -5772,7 +5772,10 @@ ul.newsticker {
 .rightbar{
   background-color: white;
   font-size: 16px;
-  height: 670px;
+  height: 750px;
+}
+.rightbar ul{
+  padding: 20px 0;
 }
 .rightbar ul li{
   border-bottom: 1px solid #f9f9f9;
