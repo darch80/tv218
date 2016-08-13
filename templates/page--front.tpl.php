@@ -24,7 +24,6 @@ global $base_url;
   <a href="#" class="jcarousel-control-prev"><i class='icon-chevron-left icon-white'>&lsaquo;</i></a>
   <a href="#" class="jcarousel-control-next"><i class='icon-chevron-right icon-white'>&rsaquo;</i></a>
 </div>
-
 <div class="w-main">
   <div class="main">
 

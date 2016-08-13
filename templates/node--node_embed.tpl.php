@@ -1,5 +1,3 @@
-<?php //pprint($node->field_image[und]) ?>
-
 <div id="owl-gallery" class="owl-carousel">
     <?php foreach($node->field_image[und] as $g): ?>
         <div>

@@ -1,12 +1,8 @@
-<?php //pprint($_SERVER['REQUEST_URI']);
-?>
-
 <?php
 $nodes = $GLOBALS['_nodes'];
 $cm = $GLOBALS['class_map'];
 $popular = $GLOBALS['popular'];
 ?>
-
 <div class="w-main">
   <div class="main">
 
@@ -27,18 +23,10 @@ $popular = $GLOBALS['popular'];
                 <?php echo $nodes[0]->title ?>
               </a>
             </h3>
-
             <p><?php echo render_teaser($nodes[0]) ?></p>
-
             <ul class="tags">
               <?php echo get_tags($nodes[0])['html']; ?>
             </ul>
-
-            <?php //if ($n->labels):  ?>
-                    <!--                        <span class="label"-->
-            <!--                              href="javascript:void(0)">-->
-            <?php //echo current($nq['featured'][2]->labels)['name']  ?><!--</span>-->
-            <?php //endif  ?>
           </article>
         </div>
       </div>
@@ -48,16 +36,16 @@ $popular = $GLOBALS['popular'];
         <?php
         for ($i = 1; $i < 9; $i++) {
           ?>
-          <div class="cell-2">
+          <div class="cell-3">
             <article class="snippet">
               <?php if ($nodes[$i]) { ?>
 
                 <?php if ($nodes[$i]->type == "video") { ?>
-                  <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
+                  <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
                 <?php } ?>
                 <?php if ($nodes[$i]->type != 'blog') { ?>
                   <a href="<?php echo render_href($nodes[$i]->nid) ?>">
-                    <img src="<?php echo render_image('x307', $nodes[$i]->field_image['und'][0]['uri']) ?>"
+                    <img src="<?php echo render_image('x185', $nodes[$i]->field_image['und'][0]['uri']) ?>"
                          alt="">
                   </a>
 
@@ -67,11 +55,6 @@ $popular = $GLOBALS['popular'];
                         <?php echo $nodes[$i]->title ?>
                       </a>
                     </h3>
-
-
-                    <ul class="tags">
-                      <?php echo get_tags($nodes[$i])['html']; ?>
-                    </ul>
                   </div>
                 <?php } else { ?>
 
@@ -104,18 +87,14 @@ $popular = $GLOBALS['popular'];
 
                 <?php } ?>
               <?php } ?>
-
-
             </article>
           </div>
         <?php } ?>
-
-        <div class="w-pager" style="display:none">
-          <?php echo theme('pager', array()); ?>
-        </div>
+      </div>
+      <div class="w-pager" style="display:none">
+        <?php echo theme('pager', array()); ?>
       </div>
     </div>
-
     <div class="second">
       <div class="row">
         <div class="cell-1">
@@ -159,9 +138,6 @@ $popular = $GLOBALS['popular'];
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
-

@@ -72,17 +72,8 @@ $video_id = $n->field_videoid['und'][0]['value'];
 if (module_exists('node_load_ajax')) {
   ?>
 
-    //jQuery(document).scroll(function(e){
-    /*jQuery(document).ready(function(){
-     jQuery('.footer').waypoint(function(direction){ loadpage(); this.destroy() });
-     
-     });*/
-    //});
-
     var lastidsend = null;
     var eventfire = false;
-    //jQuery(window).unbind('scroll'); 
-    //jQuery(window).scroll(function() {
     jQuery(window).data('ajaxready', true).scroll(function (e) {
       if (jQuery(window).data('ajaxready') == false)
         return;
@@ -130,51 +121,23 @@ if (module_exists('node_load_ajax')) {
   <?php $next_node = get_next_node_single($n); ?>
   <div class="main" id="<?php echo $n->nid ?>" data-next-node="<?php echo $next_node ?>">
     <div class="first">
-
-<?php if ($author->title) { ?>
-
-                    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ffe86a9942511b"
-                            async="async"></script>-->
-
-        <!--<div class="author">
-            <img class="a-img" src="<?php //echo $author->image   ?>" alt="">
-
-            <div class="a-info">
-                <div class="a-name"><?php //echo $author->title  ?></div>
-                <div class="a-title">
-        <?php //echo $author->description  ?>
-                    <span class="a-date">
-  <?php //echo render_ar_date($n->created);   ?>
-                </span>
-                </div>
-            </div>
-
-
-        </div>-->
-      <?php } else { ?>
-
-        <!--<div class="no-author">
-        <?php //echo render_ar_date($n->created);   ?>
-        </div>-->
-
-        <?php } ?>
       <div class="no-author">
-<?php echo render_ar_date($n->created); ?>
+        <?php echo render_ar_date($n->created); ?>
       </div>   
 
       <ul class="tags">
-      <?php echo $tags['html']; ?>
+        <?php echo $tags['html']; ?>
       </ul>
       <?php if (isset($n->field_subtitle)) { ?>
         <span class="subtitle"><?php echo $n->field_subtitle['und'][0]['value'] ?></span>
         <h3 class="node-title" style="margin-top:0.5em !important;"><?php echo $title ?></h3>
       <?php } else { ?>
         <h3 class="node-title"><?php echo $title ?></h3>
-<?php } ?>
-          <?php if (!empty($video_id)) { ?>
+      <?php } ?>
+      <?php if (!empty($video_id)) { ?>
         <div id="video-player-article">
           <section class="video">
-        <?php get_video_play_url($video_id, true) ?>
+            <?php get_video_play_url($video_id, true) ?>
           </section>    
         </div>    
       <?php } else { ?>
@@ -184,14 +147,14 @@ if (module_exists('node_load_ajax')) {
       <?php } ?>
       <?php if (($n->field_image['und'][0]['alt'])) { ?>
         <div class="img-caption"><?php echo $n->field_image['und'][0]['alt'] ?></div>
-        <?php } ?>
+      <?php } ?>
 
       <div class="node-body">
-<?php echo $r ?>
+        <?php echo $r ?>
       </div>
 
 
-<?php if (count($more)) { ?>
+      <?php if (count($more)) { ?>
 
         <div class="strike-through-header">
           <h3 class="bold">ذات علاقة</h3>
@@ -206,23 +169,23 @@ if (module_exists('node_load_ajax')) {
 
             <a href="<?php echo render_href($more[0]->nid); ?>"><h4><?php echo $more[0]->title ?></h4></a>
           </div>
-  <?php if ($more[1]) { ?>
+          <?php if ($more[1]) { ?>
             <div class="two">
               <img src="<?php echo render_image('x307', $more[1]->field_image['und'][0]['uri']); ?>" alt="">
 
 
               <a href="<?php echo render_href($more[1]->nid); ?>"><h4><?php echo $more[1]->title ?></h4></a>
             </div>
-  <?php } ?>
-  <?php if ($more[2]) { ?>
+          <?php } ?>
+          <?php if ($more[2]) { ?>
             <div class="three">
               <img src="<?php echo render_image('x307', $more[2]->field_image['und'][0]['uri']); ?>" alt="">
               <a href="<?php echo render_href($more[2]->nid); ?>"><h4><?php echo $more[2]->title ?></h4></a>
             </div>
-        <?php } ?>
+          <?php } ?>
         </div>
 
-<?php } ?>
+      <?php } ?>
 
 
 
@@ -243,10 +206,10 @@ if (module_exists('node_load_ajax')) {
             ?>
             <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
 
-  <?php } ?>
+          <?php } ?>
         </ol>
 
-<?php } ?>
+      <?php } ?>
 
 
       <div class="fb-page" data-href="https://www.facebook.com/218tv" data-width="300" data-height="500"
@@ -269,7 +232,7 @@ if (module_exists('node_load_ajax')) {
             }
           }(document, "script", "twitter-wjs");</script>
       </div>
-<?php if (count($related)) { ?>
+      <?php if (count($related)) { ?>
 
         <div class="strike-through-header">
           <h3 class="bold">تصفح المزيد</h3>
@@ -282,51 +245,14 @@ if (module_exists('node_load_ajax')) {
             ?>
             <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
 
-        <?php } ?>
+          <?php } ?>
         </ol>
 
-<?php } ?>
-
+      <?php } ?>
 
     </div>
-
-    
-
   </div>
-  <div class="loadernode" style="margin:0 auto;text-align:center;display:none">
-    <img src="<?php echo base_path() . path_to_theme() ?>/assets/nodeload.gif">
-  </div>
-<?php //echo render_other_nodes(4,$n);   ?>
 </div>
+<div class="loadernode" style="margin:0 auto;text-align:center;display:none">
+  <img src="<?php echo base_path() . path_to_theme() ?>/assets/nodeload.gif">
 </div>
-<script>
-  jQuery(function () {
-
-    /*var vid = jQuery('.video');
-     
-     var top = vid.offset().top - parseFloat(vid.css('margin-top').replace(/auto/, 0));
-     
-     jQuery(window).on('scroll', function(event) {
-     // what the y position of the scroll is
-     var y = $(this).scrollTop();
-     
-     // whether that's below the form
-     if (y >= top) {
-     // if so, ad the fixed class
-     if ( vid.is('.aside') ) {
-     return;
-     }
-     vid.attr("style","position:fixed");
-     vid.addClass('aside');
-     jQuery('.video').find("iframe").height("auto");
-     } else {
-     // otherwise remove it
-     vid.removeClass('aside');
-     vid.attr("style","position:relative");
-     jQuery('.video').find("iframe").height("336");
-     }
-     });*/
-
-  });
-
-</script>

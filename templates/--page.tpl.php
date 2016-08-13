@@ -3,7 +3,6 @@
     <?php print $title; ?>
   </h1>
 <?php endif; ?>
-
 <?php if ($tabs): ?>
   <div class="w-tabs">
     <?php print render($tabs); ?>
@@ -17,8 +16,6 @@
     <?php print render($action_links); ?>
   </ul>
 <?php endif; ?>
-
 <?php print render($page['content']); ?>
-
 
 <?php include 'sidebar.php'; ?>

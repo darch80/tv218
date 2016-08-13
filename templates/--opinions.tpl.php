@@ -86,4 +86,3 @@ $popular = $GLOBALS['popular'];
     </div>
   </div>
 </div>
-

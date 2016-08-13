@@ -1,6 +1,6 @@
-<?php render($page['content']); ?>
 <?php
 global $base_url;
+render($page['content']);
 ?>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ffe86a9942511b"
@@ -22,23 +22,13 @@ global $base_url;
       bitly: {}
     }
   }
-
   var ajax_base = '<?php echo $base_url; ?>';
 <?php
 if (module_exists('node_load_ajax')) {
   ?>
 
-    //jQuery(document).scroll(function(e){
-    /*jQuery(document).ready(function(){
-     jQuery('.footer').waypoint(function(direction){ loadpage(); this.destroy() });
-     
-     });*/
-    //});
-
     var lastidsend = null;
     var eventfire = false;
-    //jQuery(window).unbind('scroll'); 
-    //jQuery(window).scroll(function() {
     jQuery(window).data('ajaxready', true).scroll(function (e) {
       if (jQuery(window).data('ajaxready') == false)
         return;
@@ -50,15 +40,10 @@ if (module_exists('node_load_ajax')) {
         loadpage();
       }
     });
-    //});
     function loadpage() {
       jQuery(".loadernode").hide();
       var idnode = jQuery(".main").last().attr("id");
       var nextnode = jQuery(".main").last().attr("data-next-node");
-
-
-
-
 
       jQuery.get(ajax_base + "/load-ajax/node/next/" + nextnode + "/1", function (data) {
         jQuery(".w-main").append(data);
@@ -70,15 +55,11 @@ if (module_exists('node_load_ajax')) {
 
         addthis.update('share', 'url', url);
         addthis.update('share', 'title', title);
-        //addthis.update('share', 'description', "Hello, I am a description");
-
       });
-
 
     }
 <?php } ?>
 </script>
-
 <?php if ($tabs): ?>
   <div class="node-tabs">
     <?php print render($tabs); ?>
@@ -89,38 +70,9 @@ if (module_exists('node_load_ajax')) {
   <?php $next_node = get_next_node_single($n); ?>
   <div class="main" id="<?php echo $n->nid ?>" data-next-node="<?php echo $next_node ?>">
     <div class="first">
-
-      <?php if ($author->title) { ?>
-
-    <!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55ffe86a9942511b"
-          async="async"></script>-->
-
-        <!--<div class="author">
-            <img class="a-img" src="<?php //echo $author->image      ?>" alt="">
-
-            <div class="a-info">
-                <div class="a-name"><?php //echo $author->title     ?></div>
-                <div class="a-title">
-        <?php //echo $author->description  ?>
-                    <span class="a-date">
-        <?php //echo render_ar_date($n->created);  ?>
-                </span>
-                </div>
-            </div>
-
-
-        </div>-->
-      <?php } else { ?>
-
-        <!--<div class="no-author">
-        <?php //echo render_ar_date($n->created);   ?>
-        </div>-->
-
-      <?php } ?>
       <div class="no-author">
         <?php echo render_ar_date($n->created); ?>
       </div>   
-
       <ul class="tags">
         <?php echo $tags['html']; ?>
       </ul>
@@ -142,15 +94,11 @@ if (module_exists('node_load_ajax')) {
         <?php echo $r ?>
       </div>
 
-
       <?php if (count($more)) { ?>
 
         <div class="strike-through-header">
           <h3 class="bold">ذات علاقة</h3>
         </div>
-
-
-
 
         <div class="w-three-col">
           <div class="one">
@@ -187,32 +135,21 @@ __posWidget('createWidget',{wwei:'POSTQUARE_WIDGET_89044__{$n->nid}',pubid:16562
 EOT;
       echo $partner_related;
       ?>
-
-
     </div>
-
     <div class="second">
-
       <?php if (count($readlist)) { ?>
         <div class="strike-through-header">
           <h3 class="bold">قائمة القراءة </h3>
         </div>
-
         <ol class="topfive">
-
-
           <?php
           for ($i = 0; $i < count($readlist); $i++) {
             $no = $readlist[$i];
             ?>
             <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
-
           <?php } ?>
         </ol>
-
       <?php } ?>
-
-
       <div class="fb-page" data-href="https://www.facebook.com/218tv" data-width="300" data-height="500"
            data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
            data-show-facepile="true" data-show-posts="true">
@@ -248,16 +185,10 @@ EOT;
 
           <?php } ?>
         </ol>
-
       <?php } ?>
-
-
     </div>
-
   </div>
-  <div class="loadernode" style="margin:0 auto;text-align:center;display:none">
-    <img src="<?php echo base_path() . path_to_theme() ?>/assets/nodeload.gif">
-  </div>
-  <?php //echo render_other_nodes(4,$n);   ?>
 </div>
+<div class="loadernode" style="margin:0 auto;text-align:center;display:none">
+  <img src="<?php echo base_path() . path_to_theme() ?>/assets/nodeload.gif">
 </div>

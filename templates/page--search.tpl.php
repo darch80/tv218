@@ -6,5 +6,3 @@
   <?php endif; ?>
   <?php print render($page['content']); ?>
 </div>
-
-
