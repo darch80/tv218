@@ -3392,14 +3392,14 @@ h3.search-title {
   position: absolute;
   bottom: 52px;
   right: 59px;
+  width:60%;
 }
 .hero .headline-overlay h3 {
   font-size: 24px;
   color: #898989;
   background: rgba(255,255,255,0.9);
   padding: 7px 15px 15px 15px;
-  max-width: 60%;
-  /*height: 95px;*/
+  line-height: normal;
 }
 .hero .headline-overlay h3 a{
   font-size: 24px;
@@ -3427,7 +3427,7 @@ h3.search-title {
 @media (min-width: 640px) {
   .hero .headline-overlay h2 {
     font-size: 22px;
-    line-height: 1.625em;
+    line-height: normal;
   }
 }
 .hero .label {
@@ -5495,14 +5495,14 @@ ul.customtag li a {font-size:0.7225em !important;}
   list-style: none;}
 /*.toplisting img{display:block;}*/
 .toplisting img{width:270px; height: 150px; 
-                 border-radius: 50px 12px 12px / 45px 12px 12px; }
+                border-radius: 50px 12px 12px / 45px 12px 12px; }
 .toplisting h3{margin: 0; font-size: 1.1875em;padding:0;}
 /*.toplisting h3 a{display:block; text-align:right;}*/
 .toplisting ul li{
   /*max-width:163px;*/
   float: right;
   margin-right:20px;
-  
+
 }
 /*.toplisting ul li:first-child{ margin-left:0px;}*/
 .toplisting ul li p{padding:5px 0; margin: 0px; color:#3b3b3b;}
