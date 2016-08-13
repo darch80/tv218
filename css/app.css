@@ -3533,8 +3533,8 @@ body.node-page {
   background: #f5f9fa;
 }
 body.node-page .main {
-  background: #fff;
-  margin-top: 80px;
+  /*background: #fff;*/
+  /*margin-top: 80px;*/
 }
 @media (min-width: 640px) {
   body.node-page .main {
@@ -3556,7 +3556,7 @@ body.node-page .tags {
   line-height: 2em;
 }
 @media (min-width: 640px) {
-  body.node-page .first {
+  body.node-page .pdc{
     padding: 1.625em;
   }
 }
@@ -3686,7 +3686,7 @@ ol.topfive li {
   background-color: #3b3b3b;
   padding: 15px;
   font-size: 18px;
-  /*margin-bottom: 7px;*/
+  height: 80px;
 }
 ol.topfive li:hover, 
 ol.topfive li:hover a, 
@@ -5628,7 +5628,7 @@ article.snippet .text p{font-style: "Droid Arabic Naskh",serif; font-size: 14px;
 }
 #live-broadcast h3 img{
   vertical-align: middle;
-  padding-top: 2px;
+  padding-top: 4px;
 }
 .news-ticker{
   font-family: "Droid Arabic Kufi", sans-serif;
@@ -5699,7 +5699,6 @@ ul.newsticker {
 .hero-2 .headline h3 {
   color: #898989;
   float: right;
-  width: 60%;
 }
 .hero-2 .headline .tags a{
   color: #898989;
@@ -5772,14 +5771,14 @@ ul.newsticker {
 .rightbar{
   font-size: 16px;
   padding: 5px 0;
-  background: #fff url(/218tv/sites/all/themes/tv218/assets/red-corner.png) no-repeat center center; 
+  background: #fff no-repeat center center; 
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
 }
 .rightbar ul{
-  padding: 20px 0;
+  padding: 12px 0;
 }
 .rightbar ul li{
   border-bottom: 1px solid #f9f9f9;
@@ -5927,6 +5926,7 @@ have a fixed width and height (but it's not required).
   padding-right: 10px;
 
 }
+.bg-white{background-color: #fff;}
 .fcbk{
   background-color: #3b5a9b;
   margin-bottom: 20px;

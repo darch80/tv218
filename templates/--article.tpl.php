@@ -70,61 +70,64 @@ if (module_exists('node_load_ajax')) {
   <?php $next_node = get_next_node_single($n); ?>
   <div class="main" id="<?php echo $n->nid ?>" data-next-node="<?php echo $next_node ?>">
     <div class="first">
-      <div class="no-author">
-        <?php echo render_ar_date($n->created); ?>
-      </div>   
-      <ul class="tags">
-        <?php echo $tags['html']; ?>
-      </ul>
-      <?php if (isset($n->field_subtitle)) { ?>
-        <span class="subtitle"><?php echo $n->field_subtitle['und'][0]['value'] ?></span>
-        <h3 class="node-title" style="margin-top:0.5em !important;"><?php echo $title ?></h3>
-      <?php } else { ?>
-        <h3 class="node-title"><?php echo $title ?></h3>
-      <?php } ?>
-      <?php if ($n->field_image['und'][0]['uri']): ?>
-        <img src="<?php echo render_image('x585', $n->field_image['und'][0]['uri']); ?>" alt=""/>
-      <?php endif ?>
+      <div class="row">
+        <div class="cell-1">          
+          <div class="pdc bg-white">          
+            <div class="no-author">
+              <?php echo render_ar_date($n->created); ?>
+            </div>   
+            <ul class="tags">
+              <?php echo $tags['html']; ?>
+            </ul>
+            <?php if (isset($n->field_subtitle)) { ?>
+              <span class="subtitle"><?php echo $n->field_subtitle['und'][0]['value'] ?></span>
+              <h3 class="node-title" style="margin-top:0.5em !important;"><?php echo $title ?></h3>
+            <?php } else { ?>
+              <h3 class="node-title"><?php echo $title ?></h3>
+            <?php } ?>
+            <?php if ($n->field_image['und'][0]['uri']): ?>
+              <img src="<?php echo render_image('x585', $n->field_image['und'][0]['uri']); ?>" alt=""/>
+            <?php endif ?>
 
-      <?php if (($n->field_image['und'][0]['alt'])) { ?>
-        <div class="img-caption"><?php echo $n->field_image['und'][0]['alt'] ?></div>
-      <?php } ?>
+            <?php if (($n->field_image['und'][0]['alt'])) { ?>
+              <div class="img-caption"><?php echo $n->field_image['und'][0]['alt'] ?></div>
+            <?php } ?>
 
-      <div class="node-body">
-        <?php echo $r ?>
-      </div>
-
-      <?php if (count($more)) { ?>
-
-        <div class="strike-through-header">
-          <h3 class="bold">ذات علاقة</h3>
-        </div>
-
-        <div class="w-three-col">
-          <div class="one">
-            <img src="<?php echo render_image('x307', $more[0]->field_image['und'][0]['uri']); ?>" alt="">
-
-            <a href="<?php echo render_href($more[0]->nid); ?>"><h4><?php echo $more[0]->title ?></h4></a>
-          </div>
-          <?php if ($more[1]) { ?>
-            <div class="two">
-              <img src="<?php echo render_image('x307', $more[1]->field_image['und'][0]['uri']); ?>" alt="">
-
-
-              <a href="<?php echo render_href($more[1]->nid); ?>"><h4><?php echo $more[1]->title ?></h4></a>
+            <div class="node-body">
+              <?php echo $r ?>
             </div>
-          <?php } ?>
-          <?php if ($more[2]) { ?>
-            <div class="three">
-              <img src="<?php echo render_image('x307', $more[2]->field_image['und'][0]['uri']); ?>" alt="">
-              <a href="<?php echo render_href($more[2]->nid); ?>"><h4><?php echo $more[2]->title ?></h4></a>
-            </div>
-          <?php } ?>
-        </div>
 
-      <?php } ?>
-      <?php
-      $partner_related = <<<EOT
+            <?php if (count($more)) { ?>
+
+              <div class="strike-through-header">
+                <h3 class="bold">ذات علاقة</h3>
+              </div>
+
+              <div class="w-three-col">
+                <div class="one">
+                  <img src="<?php echo render_image('x307', $more[0]->field_image['und'][0]['uri']); ?>" alt="">
+
+                  <a href="<?php echo render_href($more[0]->nid); ?>"><h4><?php echo $more[0]->title ?></h4></a>
+                </div>
+                <?php if ($more[1]) { ?>
+                  <div class="two">
+                    <img src="<?php echo render_image('x307', $more[1]->field_image['und'][0]['uri']); ?>" alt="">
+
+
+                    <a href="<?php echo render_href($more[1]->nid); ?>"><h4><?php echo $more[1]->title ?></h4></a>
+                  </div>
+                <?php } ?>
+                <?php if ($more[2]) { ?>
+                  <div class="three">
+                    <img src="<?php echo render_image('x307', $more[2]->field_image['und'][0]['uri']); ?>" alt="">
+                    <a href="<?php echo render_href($more[2]->nid); ?>"><h4><?php echo $more[2]->title ?></h4></a>
+                  </div>
+                <?php } ?>
+              </div>
+
+            <?php } ?>
+            <?php
+            $partner_related = <<<EOT
 <div class="partner_related">
 <div id="POSTQUARE_WIDGET_89044__{$n->nid}"></div>
 <script>
@@ -133,22 +136,30 @@ __posWidget('createWidget',{wwei:'POSTQUARE_WIDGET_89044__{$n->nid}',pubid:16562
 </script>
 </div>
 EOT;
-      echo $partner_related;
-      ?>
+            echo $partner_related;
+            ?>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="second">
       <?php if (count($readlist)) { ?>
-        <div class="strike-through-header">
-          <h3 class="bold">قائمة القراءة </h3>
+        <div class="row">
+          <div class="cell-1">
+            <div class="strike-through-header">
+              <h3 class="bold">الأكثر قراءة </h3>
+            </div>
+            <ol class="topfive">
+              <?php
+              for ($i = 0; $i < count($readlist); $i++) {
+                $no = $readlist[$i];
+                ?>
+                <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
+              <?php } ?>
+            </ol>
+          </div>
         </div>
-        <ol class="topfive">
-          <?php
-          for ($i = 0; $i < count($readlist); $i++) {
-            $no = $readlist[$i];
-            ?>
-            <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
-          <?php } ?>
-        </ol>
       <?php } ?>
       <div class="fb-page" data-href="https://www.facebook.com/218tv" data-width="300" data-height="500"
            data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"

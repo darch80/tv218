@@ -26,12 +26,10 @@ global $base_url;
 </div>
 <div class="w-main">
   <div class="main">
-
     <div class="first">
-
       <div class="row">
         <div class="cell-3">
-          <div class="rightbar">
+          <div class="rightbar" style="background-image: url(<?php echo base_path() . path_to_theme() ?>/assets/red-corner.png)">
             <ul>
               <?php foreach ($nq['rightbar'] as $article):
                 ?>
@@ -108,20 +106,24 @@ global $base_url;
         <?php endfor; ?>
       </div>
 
-      <div id="hero2">
-        <?php foreach ($nq['hero_2'] as $n): ?>
-          <div class="hero-2 item">
-            <article class="post-<?php echo $n->id ?>">
-              <?php if ($n->type == "video") { ?>
-                <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
-              <?php } ?>
-              <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
-              <div class="headline">
-                <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
+      <div class="row">
+        <div class="cell-1">
+          <div id="hero2">
+            <?php foreach ($nq['hero_2'] as $n): ?>
+              <div class="hero-2 item">
+                <article class="post-<?php echo $n->id ?>">
+                  <?php if ($n->type == "video") { ?>
+                    <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
+                  <?php } ?>
+                  <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
+                  <div class="headline">
+                    <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
+                  </div>
+                </article>
               </div>
-            </article>
+            <?php endforeach ?>
           </div>
-        <?php endforeach ?>
+        </div>
       </div>
 
       <div class="row">
@@ -193,8 +195,8 @@ global $base_url;
       <div class="row">
         <div class="cell-1">
           <section class="videos-today">
-            <div id="">
-              <div class="bth-mbshr-parent"><a href="#" class="bth-mbshr2">البث المباشر &nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a></div>
+            <div>
+              <div class=""><a href="live" class="bth-mbshr2">البث المباشر &nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a></div>
               <h3>البرامج</h3>
             </div>
             <div id="liveshow-rail">
@@ -209,7 +211,7 @@ global $base_url;
                     $url = $base_url . "/episode/" . $id;
                     ?>
                     <li>
-                      <a href="<?php echo $url;?>">
+                      <a href="<?php echo $url; ?>">
                         <img src="<?php echo $img; ?>"/>
                         <p><?php echo $title; ?></p>
                       </a>
@@ -222,17 +224,14 @@ global $base_url;
           </section>
         </div>
       </div>
-
-
     </div>
-
     <div class="second">
       <div class="row">
         <div class="cell-1">
           <div id="live-broadcast">
             <a href="#" class="bth-mbshr">
-              <h3 style="direction: rtl;font-size: 31px;font-weight: bold;">البث المباشر 
-                <img src="<?php echo base_path() . path_to_theme() ?>/assets/play.png" width="28px"/>
+              <h3 style="direction: rtl;font-size: 1.8em;font-weight: bold;">البث المباشر 
+                <img src="<?php echo base_path() . path_to_theme() ?>/assets/play.png" width="24px"/>
               </h3>
             </a>
           </div>
