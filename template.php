@@ -66,6 +66,8 @@ function tv218_preprocess_page(&$vars)
       $n = n_load($node->nid);
       $section = field_get_items('node', $node, 'field_section');
       $n->field_section = field_view_value('node', $node, 'field_section', $section[0]);
+      $subtitle= field_get_items('node', $node, 'field_subtitle');
+      $n->field_subtitle = field_view_value('node', $node, 'field_subtitle', $subtitle[0]);
       $hero[] = $n;
     }
     $vars['nq']['hero'] = $hero;

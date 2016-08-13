@@ -14,8 +14,10 @@ global $base_url;
           <?php endif ?>
           <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270']; ?>" alt=""></a>
           <div class="headline-overlay">
-            <h2><a href="<?php echo $n->field_section['#href']; ?>"><?php echo $n->field_section['#title']; ?></a></h2>
-            <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
+            <?php if($n->field_subtitle['#markup']):?>
+            <h2><a href="<?php echo $n->href; ?>"><?php echo $n->field_subtitle['#markup']; ?></a></h2>
+            <?php endif;?>
+            <h3><a href="<?php echo $n->href ?>"><?php echo $n->title; ?></a></h3>
           </div>
         </article>
       </li>
