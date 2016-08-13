@@ -13,14 +13,23 @@ async="async"></script>
   <div class="main">
     <div class="first">
 
+      <?php
+      $vidkey = explode('/', $_GET['q']);
+      $vidkey = $vidkey[1];
+      $result = file_get_contents("https://vod-platform.net/integration/VODdetails?user=api@218tv.net&pass=4pi!32n8tZ&videokey=$vidkey");
+      $xmlResult = simplexml_load_string($result);
+      ?>
       <div id="episode-headline">
+        <?php echo $xmlResult->Video->title; ?>
       </div>
-
       <div id="episode-page">
+        <iframe src="http://vod-platform.net/Embed/<?php echo $vidkey; ?>?autoplay=1&HideControls=1&responsive=1&noads=1" height="550px" width="100%"></iframe>
       </div>
 
       <div id="episode-body">
+        <?php echo $xmlResult->Video->Description; ?>
       </div>
+
 
     </div>
     <div class="second">

@@ -60,9 +60,13 @@ function tv218_preprocess_page(&$vars)
 
     $vars['nq'] = array();
     // load hero nodequeue
+    $hero = array();
     $nq_hero = nodequeue_load_nodes(1, false, 0, 5);
     foreach ($nq_hero as $node) {
-      $hero[] = n_load($node->nid);
+      $n = n_load($node->nid);
+      $section = field_get_items('node', $node, 'field_section');
+      $n->field_section = field_view_value('node', $node, 'field_section', $section[0]);
+      $hero[] = $n;
     }
     $vars['nq']['hero'] = $hero;
 
@@ -232,10 +236,10 @@ function tv218_preprocess_page(&$vars)
     $vars['theme_hook_suggestions'][] = '__opinions';
   }
   /* --- Taxonomy Term pages ----- */
-  $most_view_url = "http://admin.mangomolo.com/analytics/index.php/nand/most?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
-  $mostview_data = file_get_contents($most_view_url);
-  $mostview_data = json_decode($mostview_data);
+  $mostview_data = getVideos("most_view", 5);
   $vars['mv'] = $mostview_data;
+  $programs_videos = getVideos("all", 3);
+  $vars['pv'] = $programs_videos;
 }
 
 function tv218_preprocess_node(&$vars)
@@ -446,4 +450,35 @@ function get_next_node_single($node)
   foreach ($result as $record) {
     return $record->nid;
   }
+}
+
+function getVideos($type = "feature", $size = 2)
+{
+  switch ($type) {
+    case "latest":
+      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=5";
+      break;
+    case "most_view":
+      $url = "https://vod-platform.net/integration/stats/getmostplayed/7?user=api@218tv.net&pass=4pi!32n8tZ&top=" . $size;
+      break;
+    case "all":
+      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&folderid=815&PageNo=1&PageSize=".$size;
+      break;
+    case "feature":
+      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=7";
+    default:
+      break;
+  }
+  $resultArray = array();
+  $result = file_get_contents($url);
+  $xmlResult = simplexml_load_string($result);
+  foreach ($xmlResult as $value) {
+    $na = array();
+    $na['thumb'] = $value->thumbnail;
+    $na['title'] = $value->title;
+    $na['date'] = render_ar_date(strtotime($value->ModificationDate));
+    $na['key'] = $value->key;
+    $resultArray[] = $na;
+  }
+  return $resultArray;
 }

@@ -9,10 +9,12 @@ global $base_url;
           <?php if ($n->type == "video") { ?>
             <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
           <?php } ?>
-          <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270'] ?>" alt=""></a>
-
+          <?php if ($n->labels): ?>
+            <span class="label" href="javascript:void(0)"><?php echo current($n->labels)['name'] ?></span>
+          <?php endif ?>
+          <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270']; ?>" alt=""></a>
           <div class="headline-overlay">
-            <h2><a href="<?php echo $n->href ?>">سياسة</a></h2>
+            <h2><a href="<?php echo $n->field_section['#href']; ?>"><?php echo $n->field_section['#title']; ?></a></h2>
             <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
           </div>
         </article>
@@ -42,7 +44,13 @@ global $base_url;
             </ul>
           </div>
         </div>
-        <?php foreach ($nq['featured'] as $article):
+        <?php
+        $fcnt = 0;
+        foreach ($nq['featured'] as $article):
+          $fcnt++;
+          if ($fcnt >= 6) {
+            continue;
+          }
           ?>
           <div class="cell-3">
             <article class="snippet fxdhgt">
@@ -51,7 +59,7 @@ global $base_url;
               <?php } ?>
               <?php if (!$article->field_hide_thumbnail): ?>
                 <a href="<?php echo $article->href ?>">
-                  <img src="<?php echo $article->image['x300'] ?>" alt="">
+                  <img src="<?php echo $article->image['x185'] ?>" alt="">
                 </a>
               <?php endif; ?>
               <div class="text <?php if ($article->field_hide_thumbnail): ?>pdt20<?php endif; ?>">
@@ -63,9 +71,6 @@ global $base_url;
                 <?php if ($article->field_hide_thumbnail): ?>
                   <p><?php echo $article->teaser; ?></p>
                 <?php endif; ?>
-                <ul class="tags">
-                  <?php echo $article->tags['html'] ?>
-                </ul>
               </div>
             </article>
           </div>
@@ -114,9 +119,6 @@ global $base_url;
               <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x960'] ?>" alt=""></a>
               <div class="headline">
                 <h3><a href="<?php echo $n->href ?>"><?php echo $n->title ?></a></h3>
-                <ul class="tags">
-                  <?php echo $n->tags['html'] ?>
-                </ul>
               </div>
             </article>
           </div>
@@ -128,13 +130,14 @@ global $base_url;
         for ($i = 1; $i <= 3; $i++):
           ?>
           <div class="cell-3">
-            <article
-              class="snippet fxdhgt <?php echo $nq['latest'][$i]->image != '' ? '' : 'no-img ' ?><?php echo $nq['latest'][$i]->type ?> <?php echo $nq['latest'][$i]->type == 'social' ? $nq['latest'][$i]->social_channel : '' ?>">
-                <?php if ($nq['latest'][$i]->type == "video") { ?>
+            <article class="snippet fxdhgt">
+              <?php if ($nq['latest'][$i]->type == "video") { ?>
                 <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="<?php echo base_path() . path_to_theme() ?>/assets/playicon.png" alt=""></span>
               <?php } ?>
               <?php if ($nq['latest'][$i]->image): ?>
-                <img src="<?php echo $nq['latest'][$i]->image['x300'] ?>" alt="" />
+                <a href="<?php echo $nq['latest'][$i]->href ?>">
+                  <img src="<?php echo $nq['latest'][$i]->image['x185'] ?>" alt="" />
+                </a>
               <?php endif ?>
               <div class="text">
                 <h3>
@@ -150,9 +153,6 @@ global $base_url;
                     <div><?php echo $nq['latest'][$i]->author->title ?></div>
                   </div>
                 <?php else: ?>
-                  <ul class="tags">
-                    <?php echo $nq['latest'][$i]->tags['html'] ?>
-                  </ul>
                 </div>
               <?php endif ?>
             </article>
@@ -163,32 +163,28 @@ global $base_url;
         <div class="row" style="overflow: hidden; margin-bottom: 20px; max-height: 517px;padding: 15px;">
           <div class="cell-3" style="padding: 0px;">
             <div class="strike-through-header" style="overflow: hidden;">
-              <h3 class="bold">أهم مقاطع الفيديو</h3>
+              <h3 class="bold">أحدث الفيديوهات</h3>
               <ol class="topfive" id="vertical-slide">
                 <?php
-                for ($i = 0; $i < 5; $i++) {
-                  $img = "http://admin.mangomolo.com/analytics/" . $mv[$i]->img;
-                  $title = $mv[$i]->title_ar;
-                  $cat_name = $mv[$i]->cat_ar;
-                  $views = $mv[$i]->today_views;
-                  $date_temp = strtotime($mv[$i]->publish_time);
-                  $date = render_ar_date($date_temp);
-                  $id = $mv[$i]->id;
+                foreach ($mv as $i => $value) {
+                  $img = $mv[$i]['thumb'];
+                  $title = $mv[$i]['title'];
+                  $date = $mv[$i]['date'];
+                  $id = $mv[$i]['key'];
                   $url = $base_url . "/episode/" . $id;
                   ?>
                   <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
                     <span><?php echo $i + 1 ?></span>
                     <h4><?php echo $title ?></h4>
-                    <small><?php echo $views; ?></small>
                   </li>    
                 <?php } ?> 
               </ol>
             </div>
           </div>
           <div style="float: right;width: 66%;">
-            <div class="center-cropped-slide" style="background-image: url(http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>)">
-              <a href="<?php echo $base_url . "/episode/" . $mv[0]->id; ?>">
-                <img src="http://admin.mangomolo.com/analytics/<?php echo $mv[0]->img; ?>" />
+            <div class="center-cropped-slide" style="background-image: url(<?php echo $mv[0]['thumb']; ?>)">
+              <a href="<?php echo $base_url . "/episode/" . $mv[0]['key']; ?>">
+                <img src="<?php echo $mv[0]['thumb']; ?>" />
                 <i class="fa fa-play" data-reactid=".0.1.2.0.1"></i>
               </a>
             </div>
@@ -198,12 +194,31 @@ global $base_url;
       <div class="row">
         <div class="cell-1">
           <section class="videos-today">
-            <div class="">
-              <div class="bth-mbshr2"><a href="#" class="bth-mbshr">البث المباشر &nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a></div>
-              <h3>تشاهدون اليوم</h3>
+            <div id="">
+              <div class="bth-mbshr-parent"><a href="#" class="bth-mbshr2">البث المباشر &nbsp;&nbsp;&nbsp;<i class="fa fa-play"></i></a></div>
+              <h3>البرامج</h3>
             </div>
             <div id="liveshow-rail">
-              <div class="toplisting"></div>
+              <div class="toplisting">
+                <ul>
+                  <?php
+                  foreach ($pv as $p) :
+                    $img = $p['thumb'];
+                    $title = $p['title'];
+                    $date = $p['date'];
+                    $id = $p['key'];
+                    $url = $base_url . "/episode/" . $id;
+                    ?>
+                    <li>
+                      <a href="<?php echo $url;?>">
+                        <img src="<?php echo $img; ?>"/>
+                        <p><?php echo $title; ?></p>
+                      </a>
+                    </li>
+                  <?php endforeach; ?>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
             </div>
           </section>
         </div>
@@ -227,7 +242,7 @@ global $base_url;
       <div class="row">
         <div class="cell-1" style="padding-bottom: 0px;">
           <div class="strike-through-header">
-            <h3 class="bold">أفضل خمس مقالات</h3>
+            <h3 class="bold">الأكثر قراءة </h3>
             <ol class="topfive">
               <li>
                 <a href="/content/%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%86-%D8%B1%D8%A7%D8%B3-%D9%84%D8%A7%D9%86%D9%88%D9%81-%D8%A7%D8%B3%D8%AA%D8%A6%D9%86%D8%A7%D9%81-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7">

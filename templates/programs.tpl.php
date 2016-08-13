@@ -54,7 +54,7 @@ global $base_url;
       $url = $base_url . "/episode/" . $id;
       ?>
       <li>
-        <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="250px"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
+        <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="auto"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
           <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
           <p class="date"><?php echo $date ?></p>
         </article>
@@ -74,7 +74,7 @@ global $base_url;
         $url = $base_url . "/episode/" . $id;
         ?>   
         <li>
-          <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="170px"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
+          <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="auto"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
             <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
             <p class="date"><?php echo $date ?></p>
           </article>
@@ -152,77 +152,4 @@ global $base_url;
       <?php } ?>   
     </ul>    
 </div>
-
-<!--<div id="show-page" class="w-show-featured all-programs">
-        <div id="show-episodes" class="show-episodes">
-        </div>
-</div>-->
-
-<?php
-
-function get_feature()
-{
-  $future_url = "http://admin.mangomolo.com/analytics/index.php/nand/featured?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
-  $future_data = file_get_contents($future_url);
-  $future_data = json_decode($future_data);
-  return $future_data;
-}
-
-function get_latest()
-{
-  $latest_url = "http://admin.mangomolo.com/analytics/index.php/nand/latest?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1&start=1&end=7
-";
-  $latest_data = file_get_contents($latest_url);
-  $latest_data = json_decode($latest_data);
-  return $latest_data;
-}
-
-function get_mostview()
-{
-  $most_view_url = "http://admin.mangomolo.com/analytics/index.php/nand/most?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
-//$most_view_url = "http://admin.mangomolo.com/analytics/index.php/nand/latest?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1&start=6&end=12";
-  $mostview_data = file_get_contents($most_view_url);
-  $mostview_data = json_decode($mostview_data);
-  return $mostview_data;
-}
-
-function get_all_programs()
-{
-//$most_view_url = "http://admin.mangomolo.com/analytics/index.php/nand/most?user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
-  $all_prog_url = "http://admin.mangomolo.com/analytics/index.php/plus/category?id=45&o=channel&user_id=97&key=f1905b5d102ce9e9cdd8d6d4b29d0da1";
-  $all_prog_data = file_get_contents($all_prog_url);
-  $all_prog_data = json_decode($all_prog_data);
-  return $all_prog_data;
-}
-
-function getVideos($type = "feature")
-{
-  switch ($type) {
-    case "latest":
-      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=5";
-      break;
-    case "most_view":
-      $url = "https://vod-platform.net/integration/stats/getmostplayed/7?user=api@218tv.net&pass=4pi!32n8tZ&top=2";
-      break;
-    case "all":
-      $url = "";
-      break;
-    case "feature":
-      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=7";
-    default:
-      break;
-  }
-  $resultArray = array();
-  $result = file_get_contents($url);
-  $xmlResult = simplexml_load_string($result);
-  foreach ($xmlResult as $value) {
-    $na = array();
-    $na['thumb'] = $value->thumbnail;
-    $na['title'] = $value->title;
-    $na['date'] = render_ar_date(strtotime($value->ModificationDate));
-    $na['key'] = $value->key;
-    $resultArray[] = $na;
-  }
-  return $resultArray;
-}
-?>    
+  

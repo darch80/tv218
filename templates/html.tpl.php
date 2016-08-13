@@ -284,7 +284,7 @@
                   <div id="mc_embed_signup_scroll">
 
                     <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="أدخل بريدك الالكتروني" required style="border-radius: 4px;width: 222px;height: 36px;float: right;direction:rtl;font:"Droid Arabic Kufi",sans-serif;">
-                    <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;text-align: center;vertical-align: middle;border:0;font-weight: bold;margin-right: 20px;"></div>
+                           <div class="submit_form_btn"><input type="submit" value="<" name="subscribe" id="mc-embedded-subscribe" class="button" style="float: right;width: 36px;height: 36px; background-color: #437e85;border-radius: 4px;text-align: center;vertical-align: middle;border:0;font-weight: bold;margin-right: 20px;"></div>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_dc3c27747693723b928932a2a_37251ca25b" tabindex="-1" value=""></div>
                   </div>
@@ -455,12 +455,12 @@
         $("#liveshow-rail .toplisting").html(html);
       }
       jQuery(function () {
-        var liveurl = '<?php echo base_path(); ?>ajax/live/load';
-        console.log(liveurl);
-        $.get(liveurl, function (data) {
-          renderlive(data);
-
-        });
+//        var liveurl = '<?php echo base_path(); ?>ajax/live/load';
+//        console.log(liveurl);
+//        $.get(liveurl, function (data) {
+//          renderlive(data);
+//
+//        });
         jQuery("form#search-form").hide()
         setTimeout(reinitvideoblk, 500);
         jQuery(".nav  .search-box form").submit(function (e) {
@@ -702,6 +702,11 @@
             e.preventDefault();
             jQuery('#live-broadcast').html('<iframe frameborder="0" scrolling="no" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/index?id=OTc=&channelid=NDU=&countries=QUQsQUUsQUYsQUcsQUksQUwsQU0sQU8sQVEsQVIsQVMsQVQsQVUsQVcsQVgsQVosQkEsQkIsQkQsQkUsQkYsQkcsQkgsQkksQkosQkwsQk0sQk4sQk8sQlEsQlIsQlMsQlQsQlYsQlcsQlksQlosQ0EsQ0MsQ0QsQ0YsQ0csQ0gsQ0ksQ0ssQ0wsQ00sQ04sQ08sQ1IsQ1UsQ1YsQ1csQ1gsQ1ksQ1osREUsREosREssRE0sRE8sRFosRUMsRUUsRUcsRUgsRVIsRVMsRVQsRkksRkosRkssRk0sRk8sRlIsR0EsR0IsR0QsR0UsR0YsR0csR0gsR0ksR0wsR00sR04sR1AsR1EsR1IsR1MsR1QsR1UsR1csR1ksSEssSE0sSE4sSFIsSFQsSFUsSUQsSUUsSUwsSU0sSU4sSU8sSVEsSVIsSVMsSVQsSkUsSk0sSk8sSlAsS0UsS0csS0gsS0ksS00sS04sS1AsS1IsS1csS1ksS1osTEEsTEIsTEMsTEksTEssTFIsTFMsTFQsTFUsTFYsTFksTUEsTUMsTUQsTUUsTUYsTUcsTUgsTUssTUwsTU0sTU4sTU8sTVAsTVEsTVIsTVMsTVQsTVUsTVYsTVcsTVgsTVksTVosTkEsTkMsTkUsTkYsTkcsTkksTkwsTk8sTlAsTlIsTlUsTlosT00sUEEsUEUsUEYsUEcsUEgsUEssUEwsUE0sUE4sUFIsUFMsUFQsUFcsUFksUUEsUkUsUk8sUlMsUlUsUlcsU0EsU0IsU0MsU0QsU0UsU0csU0gsU0ksU0osU0ssU0wsU00sU04sU08sU1IsU1MsU1QsU1YsU1gsU1ksU1osVEMsVEQsVEYsVEcsVEgsVEosVEssVEwsVE0sVE4sVE8sVFIsVFQsVFYsVFcsVFosVUEsVUcsVU0sVVMsVVksVVosVkEsVkMsVkUsVkcsVkksVk4sVlUsV0YsV1MsWEssWUUsWVQsWkEsWk0sWlc=&w=100%&h=100%&filter=ALLOW&signature=6ac510bca4588d450bcfc976552bc2c7&autoplay=true" allowtransparency="true" width="100%" height="100%" style="min-height:170px;" allowfullscreen></iframe>');
             jQuery('#live-broadcast').css('background', 'none');
+          });
+          jQuery('.bth-mbshr2').click(function (e) {
+            e.preventDefault();
+            jQuery('.bth-mbshr-parent').html('<iframe frameborder="0" scrolling="no" src="http://admin.mangomolo.com/analytics/index.php/customers/embed/index?id=OTc=&channelid=NDU=&countries=QUQsQUUsQUYsQUcsQUksQUwsQU0sQU8sQVEsQVIsQVMsQVQsQVUsQVcsQVgsQVosQkEsQkIsQkQsQkUsQkYsQkcsQkgsQkksQkosQkwsQk0sQk4sQk8sQlEsQlIsQlMsQlQsQlYsQlcsQlksQlosQ0EsQ0MsQ0QsQ0YsQ0csQ0gsQ0ksQ0ssQ0wsQ00sQ04sQ08sQ1IsQ1UsQ1YsQ1csQ1gsQ1ksQ1osREUsREosREssRE0sRE8sRFosRUMsRUUsRUcsRUgsRVIsRVMsRVQsRkksRkosRkssRk0sRk8sRlIsR0EsR0IsR0QsR0UsR0YsR0csR0gsR0ksR0wsR00sR04sR1AsR1EsR1IsR1MsR1QsR1UsR1csR1ksSEssSE0sSE4sSFIsSFQsSFUsSUQsSUUsSUwsSU0sSU4sSU8sSVEsSVIsSVMsSVQsSkUsSk0sSk8sSlAsS0UsS0csS0gsS0ksS00sS04sS1AsS1IsS1csS1ksS1osTEEsTEIsTEMsTEksTEssTFIsTFMsTFQsTFUsTFYsTFksTUEsTUMsTUQsTUUsTUYsTUcsTUgsTUssTUwsTU0sTU4sTU8sTVAsTVEsTVIsTVMsTVQsTVUsTVYsTVcsTVgsTVksTVosTkEsTkMsTkUsTkYsTkcsTkksTkwsTk8sTlAsTlIsTlUsTlosT00sUEEsUEUsUEYsUEcsUEgsUEssUEwsUE0sUE4sUFIsUFMsUFQsUFcsUFksUUEsUkUsUk8sUlMsUlUsUlcsU0EsU0IsU0MsU0QsU0UsU0csU0gsU0ksU0osU0ssU0wsU00sU04sU08sU1IsU1MsU1QsU1YsU1gsU1ksU1osVEMsVEQsVEYsVEcsVEgsVEosVEssVEwsVE0sVE4sVE8sVFIsVFQsVFYsVFcsVFosVUEsVUcsVU0sVVMsVVksVVosVkEsVkMsVkUsVkcsVkksVk4sVlUsV0YsV1MsWEssWUUsWVQsWkEsWk0sWlc=&w=100%&h=100%&filter=ALLOW&signature=6ac510bca4588d450bcfc976552bc2c7&autoplay=true" allowtransparency="true" width="100%" height="100%" style="min-height:170px;" allowfullscreen></iframe>');
+            jQuery('.bth-mbshr-parent').css('background', 'none');
           });
         });
       </script>

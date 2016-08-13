@@ -3398,14 +3398,12 @@ h3.search-title {
   color: #898989;
   background: rgba(255,255,255,0.9);
   padding: 7px 15px 15px 15px;
-  width: 1152px;
-  height: 95px;
+  max-width: 60%;
+  /*height: 95px;*/
 }
 .hero .headline-overlay h3 a{
   font-size: 24px;
-  line-height: 2.6em;
   color: #898989;
-  padding: 0.1625em 15px;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h3 {
@@ -3421,6 +3419,7 @@ h3.search-title {
   background: #3b3b3b;
   padding: 20px;
   width: 187px;
+  line-height: normal;
 }
 .hero .headline-overlay h2 a{
   color: #00ffff;
@@ -3687,7 +3686,7 @@ ol.topfive li {
   background-color: #3b3b3b;
   padding: 15px;
   font-size: 18px;
-  margin-bottom: 7px;
+  /*margin-bottom: 7px;*/
 }
 ol.topfive li:hover, 
 ol.topfive li:hover a, 
@@ -3727,17 +3726,14 @@ ol.topfive li.active > small {
   background: white;
 }
 .opinions .opinion .author {
-  padding-bottom: 30px;
-  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 20px;
 }
 .opinions .opinion p {
-  font-family: "Droid Arabic Kufi", serif;
-  font-size: 0.875em;
-  line-height: 1.85714em;
+  font-family: "Droid Arabic Naskh",serif;
+  font-size: 14px;
 }
 .opinions h3 {
-  font-size: 1.125em;
-  line-height: 1.44444em;
+  font-size: 16px;
   margin: 0.8125em 0;
   direction: rtl;
 }
@@ -3755,6 +3751,8 @@ ol.topfive li.active > small {
 }
 .author .a-info .a-name {
   color: #333;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 10px;
 }
 .author .a-info .a-name a{
   font-size: 14px;
@@ -3763,7 +3761,6 @@ ol.topfive li.active > small {
 .author .a-info .a-title {
   color: #999999;
 }
-.a-title{min-height: 15px;}
 .author .a-img {
   width: 55px !important;
   border-radius: 50%;
@@ -4624,8 +4621,11 @@ body.node-type-author .profile .author p {
      display: none;
    }*/
   .w-mnav {
-    background: rgba(40, 76, 80, 0.76) !important;   
+    background: #3b3b3b !important;   
   }
+  .news-ticker{display: none;}
+  #container{margin-top: 0px;}
+  .hero .headline-overlay h3{max-width: 75%;}
 }
 .w-mnav {
   background: #26bfb5;
@@ -4656,6 +4656,7 @@ body.node-type-author .profile .author p {
 }
 .mnav .logo {
   margin: 5px 62px 0 0;
+  text-align: center;
 }
 .mnav .logo img {
   width: 72px;
@@ -5488,23 +5489,23 @@ ul.customtag li a {font-size:0.7225em !important;}
 
 /* for home page 3 items */
 .toplisting{display:block; width: auto; color:#fff;font-family: "Droid Arabic Kufi", sans-serif;}
+.toplisting ul{padding-top: 30px;}
 .toplisting ul, .toplisting ul li{
   /*margin:0px; padding:0px;*/ 
   list-style: none;}
-.toplisting img{display:block;}
-/*.toparticles img{width:163px; height: 88px; 
-                 -moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px;
-                 border-bottom-left-radius: 6px; -moz-border-radius-topleft: 25px; -webkit-border-top-left-radius: 25px; border-top-left-radius: 25px; -moz-border-radius-topright: 6px;
-                 -webkit-border-top-right-radius: 6px; border-top-right-radius: 6px; -moz-border-radius-bottomright: 25px; -webkit-border-bottom-right-radius: 25px;border-bottom-right-radius: 25px; }*/
+/*.toplisting img{display:block;}*/
+.toplisting img{width:270px; height: 150px; 
+                 border-radius: 50px 12px 12px / 45px 12px 12px; }
 .toplisting h3{margin: 0; font-size: 1.1875em;padding:0;}
-.toplisting h3 a{color: #ffffff; display:block; text-align:right;}
+/*.toplisting h3 a{display:block; text-align:right;}*/
 .toplisting ul li{
   /*max-width:163px;*/
   float: right;
-  /*margin-right:20px;*/
+  margin-right:20px;
+  
 }
 /*.toplisting ul li:first-child{ margin-left:0px;}*/
-.toplisting ul li p{text-align:left; color: #fff; padding:5px 0; margin: 0px;}
+.toplisting ul li p{padding:5px 0; margin: 0px; color:#3b3b3b;}
 .toplisting ul li p span{display:block; float:left; margin-top:-2px; background:#17dcd2; padding:2px 5px;margin-right:5px;}
 .header{ height: inherit;}
 .toparticles{position:relative;display: block;}
@@ -5592,16 +5593,15 @@ span.playicon-over{margin:10px;position: absolute;}
 article.snippet{
   min-height: 170px;
   background-color: #fff;
-  height: 360px;
+  height: 270px;
   overflow: hidden;
 }
 
 article.snippet img{width: 100%;}
 article.snippet.fxdhgt img{width: auto;}
 article.snippet .text{padding: 5px 20px 10px 10px;text-align: right;}
-article.snippet .text h3{font-size: 18px;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
-article.snippet .text p{font-size: 16px;color: #707070;}
-article.snippet .tags{position: absolute; top: 309px;}
+article.snippet .text h3{font-size: 14px;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
+article.snippet .text p{font-style: "Droid Arabic Naskh",serif; font-size: 14px;color: #707070;}
 
 #live-broadcast{
   height: 215px;
@@ -5741,37 +5741,42 @@ ul.newsticker {
 
 .bth-mbshr2{
   float: left;
-  margin-left: 15px;
+  margin-left: 9px;
   background-color: #3b3b3b;
-  padding: 5px 12px;
+  padding: 5px 9px;
   border-radius: 4px;
   color:#00ffff;
+  direction: rtl;
 }
 .bth-mbshr2 a{
   color:#00ffff;
   font-weight: 600;
 }
 .videos-today{
-  padding: 10px 35px;
+  padding: 10px;
   background-color: #fff;
 }
 .videos-today h3{
   font-weight: 600;
-  margin: 1em 0em;
+  line-height: normal;
+  margin: 25px 0px;
 }
-.videos-today article.snippet img{
-  height: 150px;
-  border-radius: 50px 10px 10px;
-  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+.videos-today img{
+  /*border-radius: 50px 10px 10px;*/
+  /*-webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);*/
+  /*clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);*/
 }
 .videos-today article.snippet{
   height: auto;
 }
 .rightbar{
-  background-color: white;
   font-size: 16px;
-  height: 750px;
+  padding: 5px 0;
+  background: #fff url(/218tv/sites/all/themes/tv218/assets/red-corner.png) no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 .rightbar ul{
   padding: 20px 0;
@@ -5895,7 +5900,7 @@ have a fixed width and height (but it's not required).
 
 .scldv{
   color: #fff;
-  height: 170px;
+  height: 125px;
   padding: 15px;
   direction: rtl;
 }
