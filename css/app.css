@@ -2929,16 +2929,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 html {
-  font-size: 100%;
+  font-size: 14px;
   line-height: 1.625em;
 }
 
 html {
-  font-size: 97.5%;
+  /*font-size: 97.5%;*/
 }
 @media (min-width: 640px) {
   html {
-    font-size: 100%;
+    font-size: 14px;
   }
 }
 
@@ -2986,7 +2986,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 16px;
   line-height: 2.16667em;
   margin: 1.625em;
   font-family: "Droid Arabic Kufi", sans-serif;
@@ -3678,14 +3678,14 @@ ol.topfive {
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #fff;
   direction: rtl;
-  margin-top: 20px;
 }
 ol.topfive li {
   color: #fff;
   background-color: #3b3b3b;
-  padding: 15px;
-  font-size: 18px;
+  padding: 15px 15px 0;
+  font-size: 16px;
   height: 80px;
+  line-height: normal;
 }
 ol.topfive li:hover, 
 ol.topfive li:hover a, 
@@ -5691,7 +5691,7 @@ ul.newsticker {
 .hero-2 .headline {
   color: #333333;
   background: #ffffff;
-  height: 100px;
+  height: 80px;
   width: 100%;
   padding: 30px 15px 0px;
 }
@@ -5768,20 +5768,18 @@ ul.newsticker {
   height: auto;
 }
 .rightbar{
-  font-size: 16px;
-  padding: 5px 0;
+  font-size: 14px;
+  padding: 18px 0;
   background: #fff no-repeat center center; 
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
   background-size: 100% 100%;
 }
-.rightbar ul{
-  padding: 12px 0;
-}
 .rightbar ul li{
   border-bottom: 1px solid #f9f9f9;
-  padding: 20px 33px;
+  height: 89px;
+  padding: 18px 30px;
 }
 .rightbar ul li:hover{
   background-color: #f9f9f9;
@@ -5920,7 +5918,7 @@ have a fixed width and height (but it's not required).
 .scldv p{
   float: right;
   width: 203px;
-  font-size: 16px;
+  /*font-size: 16px;*/
   line-height: 27px;
   padding-right: 10px;
 

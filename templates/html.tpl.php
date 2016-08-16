@@ -195,7 +195,7 @@
                 <i class="fa fa-youtube-play"></i></a></li>
             <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                   class="fa fa-google-plus"></i></a></li>
-            <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
+            <li><a href="https://instagram.com/218tv" target="_blank"><i
                   class="fa fa-instagram"></i></a></li>
             <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
@@ -263,9 +263,8 @@
             </div>
             <ul class="mob-app">
               <li style="font-size:0.6em;">218 APP</li>
-              <li><a href="#"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-android" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-windows" aria-hidden="true"></i></a></li>
+              <li><a href="https://itunes.apple.com/eg/app/218-tv/id1088661903?mt=8"><i class="fa fa-apple" aria-hidden="true"></i></a></li>
+              <li><a href="https://play.google.com/store/apps/details?id=rytalo.com.tv218"><i class="fa fa-android" aria-hidden="true"></i></a></li>
             </ul>
           </div>
 
@@ -296,7 +295,7 @@
             <ul class="social">
               <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
               <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
+              <li><a href="https://instagram.com/218tv" target="_blank"><i
                     class="fa fa-instagram"></i></a></li>
               <li><a href="https://plus.google.com/u/0/105631431473587138124/posts" target="_blank"><i
                     class="fa fa-google-plus"></i></a></li>

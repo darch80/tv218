@@ -275,12 +275,12 @@ global $base_url;
                 </a>
               </li>
               <?php foreach ($popular as $k => $p): ?>
-                <li>
+<!--                <li>
                   <a href="<?php echo render_href($p->nid) ?>">
                     <span><?php echo $k + 1 ?></span>
                     <?php echo $p->node_title ?>
                   </a>
-                </li>
+                </li>-->
               <?php endforeach ?>
             </ol>
           </div>
