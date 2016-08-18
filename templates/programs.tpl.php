@@ -41,80 +41,83 @@ global $base_url;
   }    
 </style>
 <div class="main">
-  <!-- Section one -->
-  <h1 class="title">مختارات</h1>
-  <ul class="gridview">
-    <?php
-    $future_data = getVideos();
-    for ($i = 0; $i <= 1; $i++) {
-      $img = $future_data[$i]['thumb'];
-      if ($img) {
-        $title = $future_data[$i]['title'];
-        $date = $future_data[$i]['date'];
-        $id = $future_data[$i]['key'];
-        $url = $base_url . "/episode/" . $id;
-        ?>
-        <li>
-          <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="auto"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
-            <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
-            <p class="date"><?php echo $date ?></p>
-          </article>
-        </li>
+  <div class="pdc bg-white">
+    <!-- Section one -->
+    <h1 class="title">مختارات</h1>
+    <ul class="gridview">
       <?php
-      }
-    }
-    ?>    
-  </ul>
-
-  <!-- Section two -->
-  <div class="section2">
-    <ul class="gridview gridviewcolthree">
-      <?php
-      for ($i = 2; $i < 8; $i++) {
+      $future_data = getVideos();
+      for ($i = 0; $i <= 1; $i++) {
         $img = $future_data[$i]['thumb'];
         if ($img) {
           $title = $future_data[$i]['title'];
           $date = $future_data[$i]['date'];
           $id = $future_data[$i]['key'];
           $url = $base_url . "/episode/" . $id;
-          ?>   
+          ?>
           <li>
             <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="auto"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
               <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
               <p class="date"><?php echo $date ?></p>
             </article>
           </li>
-        <?php }
+          <?php
+        }
       }
       ?>    
     </ul>
-  </div>
-  <div style="clear:both"></div>    
 
-  <!-- Section three -->
-  <h1 class="title">أحدث الفيديوهات</h1>
-  <ul class="gridview gridviewcolthree">    
-    <?php
-    $latest_data = getVideos("latest");
-    for ($i = 0; $i < 6; $i++) {
-      $img = $latest_data[$i]['thumb'];
-      if ($img) {
-        $title = $latest_data[$i]['title'];
-        $date = $latest_data[$i]['date'];
-        $id = $latest_data[$i]['key'];
-        $url = $base_url . "/episode/" . $id;
-        ?>   
-        <li>
-          <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="170px"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
-            <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
-            <p class="date"><?php echo $date ?></p>
-          </article>
-        </li>
-  <?php }
-}
-?>    
+    <!-- Section two -->
+    <div class="section2">
+      <ul class="gridview gridviewcolthree">
+        <?php
+        for ($i = 2; $i < 8; $i++) {
+          $img = $future_data[$i]['thumb'];
+          if ($img) {
+            $title = $future_data[$i]['title'];
+            $date = $future_data[$i]['date'];
+            $id = $future_data[$i]['key'];
+            $url = $base_url . "/episode/" . $id;
+            ?>   
+            <li>
+              <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="auto"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
+                <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
+                <p class="date"><?php echo $date ?></p>
+              </article>
+            </li>
+            <?php
+          }
+        }
+        ?>    
+      </ul>
+    </div>
     <div style="clear:both"></div>    
 
+    <!-- Section three -->
+    <h1 class="title">أحدث الفيديوهات</h1>
+    <ul class="gridview gridviewcolthree">    
+      <?php
+      $latest_data = getVideos("latest");
+      for ($i = 0; $i < 6; $i++) {
+        $img = $latest_data[$i]['thumb'];
+        if ($img) {
+          $title = $latest_data[$i]['title'];
+          $date = $latest_data[$i]['date'];
+          $id = $latest_data[$i]['key'];
+          $url = $base_url . "/episode/" . $id;
+          ?>   
+          <li>
+            <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>" height="170px"/><i class="fa fa-play" data-reactid=".0.1.2.0.1"></i></a>
+              <h4 class="articletitle"> <a href="<?php echo $url ?>"><?php echo $title ?></a> </h4>
+              <p class="date"><?php echo $date ?></p>
+            </article>
+          </li>
+          <?php
+        }
+      }
+      ?>
+    </ul>
+    <div style="clear:both"></div>    
     <h1 class="title">الأكثر مشاهدة</h1>
     <ul class="gridview gridviewcolthree gridviewprograms">
       <?php
@@ -133,15 +136,12 @@ global $base_url;
               <p class="date"><?php echo $date ?></p>
             </article>
           </li>
-  <?php }
-}
-?>    
+          <?php
+        }
+      }
+      ?>    
     </ul>
-
     <div style="clear:both"></div>    
-
-
-
     <h1 class="title">البرامج</h1>
     <ul class="gridview gridviewcolthree gridviewprograms">
       <?php
@@ -157,8 +157,10 @@ global $base_url;
           <li>
             <article> <a href="<?php echo $url ?>"> <img src="<?php echo $img ?>" alt="<?php echo $title ?>"> </a></article>
           </li>
-  <?php }
-}
-?>   
+          <?php
+        }
+      }
+      ?>   
     </ul>    
+  </div>
 </div>

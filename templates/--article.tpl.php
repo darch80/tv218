@@ -191,7 +191,7 @@ EOT;
               for ($i = 0; $i < count($related); $i++) {
                 $no = $related[$i];
                 ?>
-              <li><a href="<?php echo render_href($no->nid) ?>"><span><?php echo $i+1;?></span> <?php echo $no->title ?></a></li>
+                <li><a href="<?php echo render_href($no->nid) ?>"><span><?php echo $i + 1; ?></span> <?php echo $no->title ?></a></li>
 
               <?php } ?>
             </ol>

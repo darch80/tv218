@@ -8,7 +8,6 @@
     <?php print render($tabs); ?>
   </div>
 <?php endif; ?>
-
 <div class="w-main">
   <div class="main">
     <div class="first">

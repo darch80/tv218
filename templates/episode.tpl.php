@@ -7,44 +7,56 @@ async="async"></script>
     <?php print render($tabs); ?>
   </div>
 <?php endif; ?>
-
 <div class="w-main">
   <div class="main">
     <div class="first">
-      <?php
-      $vidkey = explode('/', $_GET['q']);
-      $vidkey = $vidkey[1];
-      $result = file_get_contents("https://vod-platform.net/integration/VODdetails?user=api@218tv.net&pass=4pi!32n8tZ&videokey=$vidkey");
-      $xmlResult = simplexml_load_string($result);
-      ?>
-      <div id="episode-headline">
-        <?php echo $xmlResult->Video->title; ?>
-      </div>
-      <div id="episode-page">
-        <iframe src="http://vod-platform.net/Embed/<?php echo $vidkey; ?>?autoplay=1&HideControls=1&responsive=1&noads=1" height="550px" width="100%"></iframe>
-      </div>
-      <div id="episode-body">
-        <?php echo $xmlResult->Video->Description; ?>
+      <div class="row">
+        <div class="cell-1">
+          <div class="pdc bg-white">
+            <?php
+            $vidkey = explode('/', $_GET['q']);
+            $vidkey = $vidkey[1];
+            $result = file_get_contents("https://vod-platform.net/integration/VODdetails?user=api@218tv.net&pass=4pi!32n8tZ&videokey=$vidkey");
+            $xmlResult = simplexml_load_string($result);
+            ?>
+            <div id="episode-headline">
+              <?php echo $xmlResult->Video->title; ?>
+            </div>
+            <div id="episode-page">
+              <iframe src="http://vod-platform.net/Embed/<?php echo $vidkey; ?>?autoplay=1&HideControls=1&responsive=1&noads=1" height="550px" width="100%"></iframe>
+            </div>
+            <div id="episode-body">
+              <?php echo $xmlResult->Video->Description; ?>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
     <div class="second">
-      <div class="strike-through-header">
-        <h3 class="bold">ذات علاقة</h3>
-      </div>
-      <div id="episode-related"></div>
-      <?php if (count($popular)) { ?>
-        <div class="strike-through-header">
-          <h3 class="bold">الأكثر قراءة  </h3>
+      <div class="row">
+        <div class="cell-1">
+          <div class="strike-through-header">
+            <h3 class="bold">ذات علاقة</h3>
+          </div>
+          <div id="episode-related"></div>
         </div>
-        <ol class="topfive">
-          <?php
-          for ($i = 0; $i < count($popular); $i++) {
-            $no = $popular[$i];
-            ?>
-            <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->node_title ?></a></li>
-          <?php } ?>
-        </ol>
+      </div>
+      <?php if (count($popular)) { ?>
+        <div class="row">
+          <div class="cell-1">
+            <div class="grey-list">
+              <h3 class="bold">الأكثر قراءة  </h3>
+            </div>
+            <ol class="topfive">
+              <?php
+              for ($i = 0; $i < count($popular); $i++) {
+                $no = $popular[$i];
+                ?>
+                <li><a href="<?php echo render_href($no->nid) ?>"><span><?php echo $i + 1; ?></span> <?php echo $no->node_title ?></a></li>
+              <?php } ?>
+            </ol>
+          </div>
+        </div>
       <?php } ?>
     </div>
   </div>

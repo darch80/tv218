@@ -7,7 +7,6 @@ $popular = $GLOBALS['popular'];
 <div class="w-main">
   <div class="main">
     <div class="first" style="background: #fff;">
-
       <div class="w-full one-cell pagediv cell-1">
         <div class="pageitem">
           <?php foreach ($nodes as $key => $nod): ?>
