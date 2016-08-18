@@ -121,10 +121,9 @@ global $base_url;
           </div>
         <?php endfor; ?>
       </div>
-
       <div class="row">
         <div class="cell-1">
-          <div id="hero2">
+          <div id="hero2" dir="ltr">
             <?php foreach ($nq['hero_2'] as $n): ?>
               <div class="hero-2 item">
                 <article class="post-<?php echo $n->id ?>">

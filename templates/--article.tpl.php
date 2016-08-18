@@ -26,7 +26,6 @@ render($page['content']);
 <?php
 if (module_exists('node_load_ajax')) {
   ?>
-
     var lastidsend = null;
     var eventfire = false;
     jQuery(window).data('ajaxready', true).scroll(function (e) {
@@ -65,7 +64,6 @@ if (module_exists('node_load_ajax')) {
     <?php print render($tabs); ?>
   </div>
 <?php endif; ?>
-
 <div class="w-main">
   <?php $next_node = get_next_node_single($n); ?>
   <div class="main" id="<?php echo $n->nid ?>" data-next-node="<?php echo $next_node ?>">
@@ -86,7 +84,7 @@ if (module_exists('node_load_ajax')) {
               <h3 class="node-title"><?php echo $title ?></h3>
             <?php } ?>
             <?php if ($n->field_image['und'][0]['uri']): ?>
-              <img src="<?php echo render_image('x585', $n->field_image['und'][0]['uri']); ?>" alt=""/>
+              <img src="<?php echo render_image('x585', $n->field_image['und'][0]['uri']); ?>" alt="" width="100%" />
             <?php endif ?>
 
             <?php if (($n->field_image['und'][0]['alt'])) { ?>
@@ -103,7 +101,7 @@ if (module_exists('node_load_ajax')) {
               </div>
               <div class="w-three-col">
                 <div class="one">
-                  <img src="<?php echo render_image('x307', $more[0]->field_image['und'][0]['uri']); ?>" alt="">
+                  <img src="<?php echo render_image('x307', $more[0]->field_image['und'][0]['uri']); ?>" alt=""/>
                   <a href="<?php echo render_href($more[0]->nid); ?>"><h4><?php echo $more[0]->title ?></h4></a>
                 </div>
                 <?php if ($more[1]) { ?>

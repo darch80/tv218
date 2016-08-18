@@ -381,8 +381,6 @@
         var owlInstance = owl.data('owlCarousel');
         if (owlInstance != null)
           owlInstance.reinit();
-
-
       }
       function renderlive(json) {
         var jobj = $.parseJSON(json);
@@ -489,7 +487,7 @@
     <?php if ($is_front) { ?>
       <script type="text/javascript">
         // Slideshows
-        (function ($) {
+        jQuery(document).ready(function () {
           $('#hero').jcarousel().jcarouselAutoscroll({
             interval: 5000,
             target: '+=1',
@@ -517,55 +515,21 @@
                   .jcarouselControl({
                     target: '+=1'
                   });
+
           $("#hero2").owlCarousel({
+            rtl: true,
             items: 1,
             singleItem: true,
             autoPlay: true,
             pagination: false,
             navigation: true,
             navigationText: [
-              "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
               "<i class='icon - chevron - right icon - white'>&rsaquo;</i>",
+              "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
             ]
           });
-          //video slider
-          var cur = 0, // Start Slide Index. We'll use ++cur to increment index
-                  pau = 6000, // Pause Time (ms)
-                  fad = 500, // Fade Time (ms)
-                  $ga = jQuery('.center-cropped-slide'), // Cache Gallery Element
-                  $sl = jQuery('#vertical-slide li'), // Cache Slides Elements
-                  tot = $sl.length, // We'll use cur%tot to reset to first slide
-                  itv;                  // Used to clear on mouseenter
 
-          //    $sl.hide().eq(cur).show(); // Hide all Slides but desired one
-
-          function stopFn() {
-            clearInterval(itv);
-          }
-          function loopFn() {
-            var n = $ga.queue("slideFn");
-            itv = setInterval(slideFn, pau);
-          }
-          $sl.click(function (e) {
-            e.preventDefault();
-            cur = $sl.index(jQuery(this)) - 1;
-            slideFn();
-          });
-          function slideFn() {
-            ++cur;
-            $sl.removeClass('active').eq(cur % tot).addClass('active');
-            var newImage = $sl.eq(cur % tot).data('img');
-            var newURL = $sl.eq(cur % tot).data('url');
-            $ga
-                    .hide("slide", {direction: "up"}, fad)
-                    .show("slide", {direction: "down"}, fad);
-            setTimeout(function () {
-              $ga.css('background-image', 'url(' + newImage + ')');
-              $ga.children('img').attr('src', newImage);
-              $ga.children('a').attr('href', newURL);
-            }, fad);
-          }
-        })(jQuery);
+        });
       </script>
       <script type="text/javascript">
         $("#webticker").webTicker({

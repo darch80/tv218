@@ -2929,16 +2929,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 html {
-  font-size: 14px;
+  font-size: 100%;
   line-height: 1.625em;
 }
 
 html {
-  /*font-size: 97.5%;*/
+  font-size: 97.5%;
 }
 @media (min-width: 640px) {
   html {
-    font-size: 14px;
+    font-size: 100%;
   }
 }
 
@@ -2986,7 +2986,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 2.16667em;
   margin: 1.625em;
   font-family: "Droid Arabic Kufi", sans-serif;
@@ -3141,7 +3141,7 @@ input[type="submit"]:hover {
   display: block;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   font-family: "Droid Arabic Kufi", sans-serif;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 .w-header .nav ul a.livestream, .w-header .nav ul a.active {
   /*background: #26bfb5;*/
@@ -3187,7 +3187,6 @@ input[type="submit"]:hover {
 .search-box {
   float: right;
   margin-top: -5px;
-  width: 180px;
 }
 .search-box input {
   margin: 0;
@@ -3204,6 +3203,10 @@ input[type="submit"]:hover {
   font-family: "Droid Arabic Kufi", sans-serif;
   background: #484848 url(../assets/search.png) no-repeat right 12px center;
   background-size: 16px;
+  width: 50px;
+}
+.search-box input:focus {
+  width: 150px;
 }
 .search-box input:-moz-placeholder {
   color: rgba(255, 255, 255, 0.4);
@@ -3392,25 +3395,25 @@ h3.search-title {
   width:60%;
 }
 .hero .headline-overlay h3 {
-  font-size: 24px;
-  color: #898989;
+  font-size: 1.5em;
+  color: #fff;
   background: rgba(43, 117, 116, 0.86);
   padding: 7px 15px 15px 15px;
   background: r
     line-height: normal;
 }
 .hero .headline-overlay h3 a{
-  font-size: 24px;
+  font-size: 1.5em;
   color: #fff;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h3 {
-    font-size:24px;
+    font-size:1.5em;
   }
 }
 .hero .headline-overlay h2 {
   color: #00ffff;
-  font-size: 24px;
+  font-size: 1.5em;
   display: inline-block;
   right: 30px;
   font-weight: bold;
@@ -3423,7 +3426,7 @@ h3.search-title {
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h2 {
-    font-size: 22px;
+    font-size: 1.5em;
     line-height: normal;
   }
 }
@@ -3647,7 +3650,7 @@ article, p {
   padding-left: 0;
 }
 .tags a {
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 50px;
   color: #999999;
   padding: 0em 0.75em 0.1625em;
@@ -3681,7 +3684,7 @@ ol.topfive li {
   color: #fff;
   background-color: #3b3b3b;
   padding: 15px 15px 0;
-  font-size: 16px;
+  font-size: 1em;
   min-height: 80px;
   line-height: normal;
 }
@@ -3727,10 +3730,10 @@ ol.topfive li.active > small {
 }
 .opinions .opinion p {
   font-family: "Droid Arabic Naskh",serif;
-  font-size: 14px;
+  font-size: 0.875em;
 }
 .opinions h3 {
-  font-size: 16px;
+  font-size: 1em;
   margin: 0.8125em 0;
   direction: rtl;
 }
@@ -3752,7 +3755,7 @@ ol.topfive li.active > small {
   padding-bottom: 10px;
 }
 .author .a-info .a-name a{
-  font-size: 16px;
+  font-size: 1em;
   font-weight: normal;
 }
 .author .a-info .a-title {
@@ -3804,7 +3807,7 @@ ol.topfive li.active > small {
   *zoom: 1;
   margin-top: 10px;
   margin-right: 50px;
-  font-size: 14px;
+  font-size: 0.875em;
 }
 .footer .pd{
   padding: 2.275em 0;
@@ -4500,7 +4503,6 @@ body.node-type-author .profile .author p {
   float: none;
 }
 .page-taxonomy-term .first .a-title {
-  border-bottom: 1px solid #f0f0f0;
   padding-bottom: 5px;
   display: inline-block;
   padding-left: 20px;
@@ -4730,7 +4732,7 @@ body.node-type-author .profile .author p {
   top: 210px;
   display: block;
   padding: 15px 10px;
-  font-size: 16px;
+  font-size: 1em;
   text-decoration: none;
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -4739,7 +4741,6 @@ body.node-type-author .profile .author p {
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
   font-family: "Droid Arabic Kufi", sans-serif;
-  /*background: #16d5d5 url(../assets/rarrow.png) no-repeat 60% 80%;*/
   background: #16d5d5;
 }
 .mrelated.hide {
@@ -4748,8 +4749,7 @@ body.node-type-author .profile .author p {
 
 .mshrink {
   position: fixed;
-  width: 60px;
-  border-right: 10px solid #26bfb5;
+  border-right: 10px solid #16d5d5;
   right: 0;
   z-index: 10000;
   height: 100%;
@@ -4768,12 +4768,11 @@ body.node-type-author .profile .author p {
 .mshrink a {
   color: #fff;
   position: relative;
-  top: 130px;
+  top: 210px;
   display: block;
-  padding: 10px 10px 40px 8px;
+  padding: 15px 10px;
   text-align: left;
-  font-size: 0.75em;
-  line-height: 2.16667em;
+  font-size: 1em;
   text-decoration: none;
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
@@ -4782,7 +4781,7 @@ body.node-type-author .profile .author p {
   -webkit-border-bottom-left-radius: 4px;
   border-bottom-left-radius: 4px;
   font-family: "Droid Arabic Kufi", sans-serif;
-  background: #26bfb5 url(../assets/mrelated.png) no-repeat 60% 80%;
+  background: #16d5d5;
 }
 .mshrink.hide {
   display: none;
@@ -4829,10 +4828,6 @@ body.node-type-author .profile .author p {
 .mgoogle {
   background: url(../assets/gplus.png) no-repeat;
   background-size: contain;
-}
-
-.page-taxonomy-term .opinions {
-  background: #f2f4f5;
 }
 
 .node-type-page .main .first {
@@ -5061,7 +5056,7 @@ body.node-type-author .profile .author p {
   position: absolute;
   background-color: #FFF;
   padding: 8px 10px;
-  padding-left: 14px;
+  padding-left: 0.875em;
   color: #26bfb5;
   left: 20px;
   bottom: 30px;
@@ -5577,10 +5572,8 @@ span.playicon-over{margin:10px;position: absolute;}
 }
 @media (min-width: 320px) and (max-width: 640px) {
   .cell, .cell-1, .cell-2, .cell-3{
-    padding: 5px;
-  }
-  .mcell-2{
-    width: 49.5%;
+    width: 100%;
+    padding: 15px;
   }
 }
 @media (min-width: 768px) {
@@ -5630,8 +5623,8 @@ article.snippet{
 article.snippet img{width: 100%;}
 article.snippet.fxdhgt img{width: auto;}
 article.snippet .text{padding: 5px 20px 10px 10px;text-align: right;}
-article.snippet .text h3{font-size: 14px;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
-article.snippet .text p{font-style: "Droid Arabic Naskh",serif; font-size: 14px;color: #707070;}
+article.snippet .text h3{font-size: 0.875em;color:#3b3b3b;margin: 0 0 14px 0;line-height: inherit;}
+article.snippet .text p{font-style: "Droid Arabic Naskh",serif; font-size: 0.875em;color: #707070;}
 
 #live-broadcast{
   height: 215px;
@@ -5794,7 +5787,7 @@ ul.newsticker {
   height: auto;
 }
 .rightbar{
-  font-size: 16px;
+  font-size: 1em;
   padding: 18px 0;
   background: #fff no-repeat center center; 
   -webkit-background-size: 100% 100%;
@@ -5934,6 +5927,7 @@ have a fixed width and height (but it's not required).
   vertical-align: middle;
   margin-top: 5px;
   margin-right: 5px;
+  margin-left: 5px;
 }
 .scldv .sclcn i{
   height: 48px;
@@ -5941,13 +5935,6 @@ have a fixed width and height (but it's not required).
   padding-top: 10px;
   font-size: 31px;
   background-color: #fff;
-}
-.scldv p{
-  float: right;
-  width: 203px;
-  line-height: 27px;
-  padding-right: 10px;
-
 }
 .bg-white{background-color: #fff;}
 .fcbk{
@@ -5965,4 +5952,19 @@ have a fixed width and height (but it's not required).
 }
 .twttr i{
   color: #19c3e7;
+}
+
+/*My mobile*/
+@media (min-width: 320px) and (max-width: 640px) {
+  article.snippet.fxdhgt img{
+    width: 100%;
+  }
+  .featured .label-bg{
+    height: 100%;
+    width: 30%;
+    padding-top: 25px;
+  }
+  .featured{
+    height: 120px;
+  }
 }
