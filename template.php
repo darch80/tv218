@@ -103,7 +103,7 @@ function tv218_preprocess_page(&$vars)
     $vars['nq']['social'] = $social;
 
     // load latest nodequeue
-    $nq_latest = nodequeue_load_nodes(4, false, 0, 3);
+    $nq_latest = nodequeue_load_nodes(4, false, 0, 4);
     foreach ($nq_latest as $node) {
       $latest[] = n_load($node->nid);
     }
