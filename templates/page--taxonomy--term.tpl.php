@@ -5,17 +5,15 @@ $popular = $GLOBALS['popular'];
 ?>
 <div class="w-main">
   <div class="main">
-
-    <div class="first">
-
+    <div class="first pagediv">
       <div class="row">
         <div class="cell-1">
-          <article class="article">
+          <article class="article <?php echo $cm[$i % 2]; ?>">
             <?php if ($nodes[0]->type == "video") { ?>
               <span class="playicon-over"><img style="width:30px;height:30px;border-radius:0;" src="sites/all/themes/tv218/assets/playicon.png" alt=""></span>
             <?php } ?>
             <a href="<?php echo render_href($nodes[0]->nid) ?>">
-              <img src="<?php echo render_image('x633', $nodes[0]->field_image['und'][0]['uri']) ?>" alt="">
+              <img src="<?php echo render_image('x633', $nodes[0]->field_image['und'][0]['uri']) ?>" alt="" width="100%">
             </a>
 
             <h3>
@@ -30,14 +28,12 @@ $popular = $GLOBALS['popular'];
           </article>
         </div>
       </div>
-
       <div class="row">
-
         <?php
-        for ($i = 1; $i < 9; $i++) {
+        for ($i = 1; $i < 7; $i++) {
           ?>
-          <div class="cell-3">
-            <article class="snippet">
+          <div class="cell-3 pageitem">
+            <article class="snippet <?php echo $cm[$i % 2]; ?>">
               <?php if ($nodes[$i]) { ?>
 
                 <?php if ($nodes[$i]->type == "video") { ?>
@@ -48,7 +44,6 @@ $popular = $GLOBALS['popular'];
                     <img src="<?php echo render_image('x185', $nodes[$i]->field_image['und'][0]['uri']) ?>"
                          alt="">
                   </a>
-
                   <div class="text">
                     <h3>
                       <a href="<?php echo render_href($nodes[$i]->nid) ?>">
@@ -57,12 +52,10 @@ $popular = $GLOBALS['popular'];
                     </h3>
                   </div>
                 <?php } else { ?>
-
                   <div class="opinion">
                     <a href="<?php echo render_href($nodes[$i]->nid) ?>">
                       <h3><?php echo $nodes[$i]->title; ?></h3>
                     </a>
-
                     <p>
                       <?php
                       echo render_teaser($nodes[$i], 90);
@@ -90,16 +83,18 @@ $popular = $GLOBALS['popular'];
             </article>
           </div>
         <?php } ?>
-      </div>
-      <div class="w-pager" style="display:none">
-        <?php echo theme('pager', array()); ?>
+        <div class="pagediv">
+          <div class="w-pager" style="display:none">
+            <?php echo theme('pager', array()); ?>
+          </div>
+        </div>
       </div>
     </div>
     <div class="second">
       <div class="row">
         <div class="cell-1">
-          <div class="strike-through-header">
-            <h3 class="bold">أفضل خمس مقالات</h3>
+          <div class="grey-list">
+            <h3 class="bold">الأكثر قراءة </h3>
             <ol class="topfive">
               <?php foreach ($popular as $k => $p): ?>
                 <li>

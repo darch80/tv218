@@ -4370,7 +4370,6 @@ body.node-type-author .profile .author .a-info {
 body.node-type-author .profile .author .a-info .a-title {
   font-size: 0.875em;
   line-height: 1.48571em;
-  border-bottom: 1px solid #dfe6e6;
   padding-bottom: 8px;
 }
 body.node-type-author .profile .author > div {
@@ -4834,10 +4833,6 @@ body.node-type-author .profile .author p {
 }
 
 .page-taxonomy-term .opinions {
-  background: #f2f4f5;
-}
-
-.node-type-blog .opinions {
   background: #f2f4f5;
 }
 
