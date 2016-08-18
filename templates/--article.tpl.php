@@ -98,22 +98,17 @@ if (module_exists('node_load_ajax')) {
             </div>
 
             <?php if (count($more)) { ?>
-
               <div class="strike-through-header">
                 <h3 class="bold">ذات علاقة</h3>
               </div>
-
               <div class="w-three-col">
                 <div class="one">
                   <img src="<?php echo render_image('x307', $more[0]->field_image['und'][0]['uri']); ?>" alt="">
-
                   <a href="<?php echo render_href($more[0]->nid); ?>"><h4><?php echo $more[0]->title ?></h4></a>
                 </div>
                 <?php if ($more[1]) { ?>
                   <div class="two">
                     <img src="<?php echo render_image('x307', $more[1]->field_image['und'][0]['uri']); ?>" alt="">
-
-
                     <a href="<?php echo render_href($more[1]->nid); ?>"><h4><?php echo $more[1]->title ?></h4></a>
                   </div>
                 <?php } ?>
@@ -124,7 +119,6 @@ if (module_exists('node_load_ajax')) {
                   </div>
                 <?php } ?>
               </div>
-
             <?php } ?>
             <?php
             $partner_related = <<<EOT
@@ -147,7 +141,7 @@ EOT;
       <?php if (count($readlist)) { ?>
         <div class="row">
           <div class="cell-1">
-            <div class="strike-through-header">
+            <div class="grey-list">
               <h3 class="bold">الأكثر قراءة </h3>
             </div>
             <ol class="topfive">
@@ -155,7 +149,12 @@ EOT;
               for ($i = 0; $i < count($readlist); $i++) {
                 $no = $readlist[$i];
                 ?>
-                <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
+                <li>
+                  <a href="<?php echo render_href($no->nid) ?>">
+                    <span><?php echo $i + 1 ?></span>
+                    <?php echo $no->title ?>
+                  </a>
+                </li>
               <?php } ?>
             </ol>
           </div>
@@ -182,24 +181,25 @@ EOT;
           }(document, "script", "twitter-wjs");</script>
       </div>
       <?php if (count($related)) { ?>
+        <div class="row">
+          <div class="cell-1">
+            <div class="grey-list">
+              <h3 class="bold">تصفح المزيد</h3>
+            </div>
+            <ol class="topfive">
+              <?php
+              for ($i = 0; $i < count($related); $i++) {
+                $no = $related[$i];
+                ?>
+              <li><a href="<?php echo render_href($no->nid) ?>"><span><?php echo $i+1;?></span> <?php echo $no->title ?></a></li>
 
-        <div class="strike-through-header">
-          <h3 class="bold">تصفح المزيد</h3>
+              <?php } ?>
+            </ol>
+          </div>
         </div>
-        <ol class="topfive">
-
-          <?php
-          for ($i = 0; $i < count($related); $i++) {
-            $no = $related[$i];
-            ?>
-            <li><a href="<?php echo render_href($no->nid) ?>"><?php echo $no->title ?></a></li>
-
-          <?php } ?>
-        </ol>
       <?php } ?>
     </div>
   </div>
 </div>
 <div class="loadernode" style="margin:0 auto;text-align:center;display:none">
-  <img src="<?php echo base_path() . path_to_theme() ?>/assets/nodeload.gif">
 </div>

@@ -3086,7 +3086,6 @@ input[type="submit"]:hover {
 /* layout */
 .w-header {
   background-color: #3b3b3b;
-  height: 86px;
 }
 
 .header {
@@ -3116,7 +3115,6 @@ input[type="submit"]:hover {
   *zoom: 1;
   float: right;
   margin-left: 15px;
-  width: 596px;
 }
 .w-header .nav ul li {
   list-style-image: none;
@@ -3138,7 +3136,6 @@ input[type="submit"]:hover {
   padding-left: 0;
 }
 .w-header .nav ul a {
-  height: 50px;
   padding: 0px 8px;
   color: #fff;
   display: block;
@@ -3190,9 +3187,9 @@ input[type="submit"]:hover {
 .search-box {
   float: right;
   margin-top: -5px;
+  width: 180px;
 }
 .search-box input {
-  width: 183px;
   margin: 0;
   color: #fff;
   border: none;
@@ -3397,13 +3394,14 @@ h3.search-title {
 .hero .headline-overlay h3 {
   font-size: 24px;
   color: #898989;
-  background: rgba(255,255,255,0.9);
+  background: rgba(43, 117, 116, 0.86);
   padding: 7px 15px 15px 15px;
-  line-height: normal;
+  background: r
+    line-height: normal;
 }
 .hero .headline-overlay h3 a{
   font-size: 24px;
-  color: #898989;
+  color: #fff;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h3 {
@@ -3416,12 +3414,12 @@ h3.search-title {
   display: inline-block;
   right: 30px;
   font-weight: bold;
-  background: #3b3b3b;
+  background: rgba(35,170,165, 0.87);
   padding: 20px;
   line-height: normal;
 }
 .hero .headline-overlay h2 a{
-  color: #00ffff;
+  color: #fff;
 }
 @media (min-width: 640px) {
   .hero .headline-overlay h2 {
@@ -3556,7 +3554,7 @@ body.node-page .tags {
 }
 @media (min-width: 640px) {
   body.node-page .pdc{
-    padding: 1.625em;
+    padding: 2.5em;
   }
 }
 body.node-page .node-title {
@@ -3677,14 +3675,14 @@ ol.topfive {
   background-color: #3b3b3b;
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #fff;
-  direction: rtl;
+  padding-bottom: 40px;
 }
 ol.topfive li {
   color: #fff;
   background-color: #3b3b3b;
   padding: 15px 15px 0;
   font-size: 16px;
-  height: 80px;
+  min-height: 80px;
   line-height: normal;
 }
 ol.topfive li:hover, 
@@ -3754,7 +3752,7 @@ ol.topfive li.active > small {
   padding-bottom: 10px;
 }
 .author .a-info .a-name a{
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
 }
 .author .a-info .a-title {
@@ -4450,20 +4448,21 @@ body.node-type-author .profile .author p {
 .weather {
   font-family: "Droid Arabic Kufi", sans-serif;
   color: #ffffff;
-  float: right;
+  float: left;
   position: relative;
 }
 .weather-sample .info,
 .weather .info{
-  position: absolute;
+  position: relative;
+  float: right;
   top:-15px;
-  right: 20px;
+  left: 30px;
 }
 .icon.sample,
 .icon.ny{
-  position: absolute;
-  top: 2px;
-  right: 60px;
+  position: relative;
+  float: right;
+  left: 25px;
 }
 
 .weather-sample .info > div,
@@ -4517,11 +4516,10 @@ body.node-type-author .profile .author p {
   margin-bottom: 0;
 }
 
-.strike-through-header {
+.grey-list {
   background: #3b3b3b;
-  padding-bottom: 40px;
 }
-.strike-through-header h3 {
+.grey-list h3 {
   font-size: 18px;
   margin: 17px 49px 0 0;
   font-family: "Droid Arabic Kufi", sans-serif;
@@ -4531,6 +4529,39 @@ body.node-type-author .profile .author p {
   position: relative;
   z-index: 2;
   text-align: center;
+}
+
+.strike-through-header {
+  height: 74px;
+  position: relative;
+  text-align: center;
+  max-width: 940px;
+  margin: 0 auto 10px;
+}
+.strike-through-header h3 {
+  font-size: 1.5em;
+  line-height: 2.16667em;
+  margin: 25px 0 0;
+  font-family: "Droid Arabic Kufi", sans-serif;
+  color: #46868c;
+  font-weight: normal;
+  display: inline-block;
+  background: #fff;
+  padding: 0 12px;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  text-align: center;
+}
+.strike-through-header:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top: 52px;
+  left: 0px;
+  z-index: 1;
+  height: 2px;
+  background: #f0f7f7;
 }
 .center-cropped-slide {
   width: 100%;
@@ -4569,7 +4600,7 @@ body.node-type-author .profile .author p {
   clear: both;
 }
 .w-three-col h4 {
-  font-size: 0.875em;
+  font-size: 1.2em;
   line-height: 1.85714em;
   text-align: right;
   direction: rtl;
@@ -4627,14 +4658,11 @@ body.node-type-author .profile .author p {
   .hero .headline-overlay h3{max-width: 75%;}
 }
 .w-mnav {
-  background: #26bfb5;
+  background: #3b3b3b;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000000;
-}
-.w-mnav.trans {
-  background: rgba(40, 76, 80, 0.76);
+  z-index: 999;
 }
 
 .mnav {
@@ -4642,7 +4670,6 @@ body.node-type-author .profile .author p {
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
-  height: 80px;
 }
 .mnav:after {
   content: " ";
@@ -4651,15 +4678,13 @@ body.node-type-author .profile .author p {
 }
 .mnav .burger {
   float: right;
-  margin: 5px 0 0 0;
+  margin: 15px 0 0 0;
 }
 .mnav .logo {
-  margin: 5px 62px 0 0;
+  margin: 5px 0 0 0;
+  float: right;
   text-align: center;
-}
-.mnav .logo img {
-  width: 72px;
-  fill: #fff;
+  width: 75%;
 }
 @media (min-width: 640px) {
   .mnav {
@@ -4685,8 +4710,7 @@ body.node-type-author .profile .author p {
 
 .mrelated {
   position: fixed;
-  width: 60px;
-  border-left: 10px solid #26bfb5;
+  border-left: 10px solid #16d5d5;
   left: 0;
   z-index: 10000;
   height: 100%;
@@ -4703,14 +4727,12 @@ body.node-type-author .profile .author p {
   }
 }
 .mrelated a {
-  color: #fff;
+  color: #3b3b3b;
   position: relative;
-  top: 130px;
+  top: 210px;
   display: block;
-  padding: 10px 10px 40px 8px;
-  text-align: left;
-  font-size: 0.75em;
-  line-height: 2.16667em;
+  padding: 15px 10px;
+  font-size: 16px;
   text-decoration: none;
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -4719,7 +4741,8 @@ body.node-type-author .profile .author p {
   -webkit-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
   font-family: "Droid Arabic Kufi", sans-serif;
-  background: #26bfb5 url(../assets/mrelated.png) no-repeat 60% 80%;
+  /*background: #16d5d5 url(../assets/rarrow.png) no-repeat 60% 80%;*/
+  background: #16d5d5;
 }
 .mrelated.hide {
   display: none;
@@ -4777,8 +4800,7 @@ body.node-type-author .profile .author p {
     bottom: 0;        
   }
   .main {
-    padding-left: 60px;
-    padding-right: 28px;
+    padding: 0 15px;
   }
 }
 .msocial {
@@ -4838,7 +4860,7 @@ body.node-type-author .profile .author p {
   font-size: 0.8125em;
   line-height: 2em;
   right: 0;
-  background: #274a4e;
+  /*background: #274a4e;*/
   padding: 0.8125em;
 }
 .pushy a {
@@ -5220,6 +5242,9 @@ body.node-type-author .profile .author p {
   margin: 30px 0;
 }
 
+.msearch-btn {
+  padding-top: 10px;
+}
 .msearch-box {
   padding: 2px 6%;
 }
@@ -5232,7 +5257,7 @@ body.node-type-author .profile .author p {
   text-align: center;
   direction: rtl;
   font-family: "Droid Arabic Kufi", sans-serif;
-  background: #537e83 url(../assets/search.png) no-repeat 5px center;
+  background: #484848 url(../assets/search.png) no-repeat 5px center;
   background-size: 24px;
 }
 .msearch-box input:-moz-placeholder {
@@ -5418,6 +5443,10 @@ body.node-type-author .profile .author p {
   body.page-taxonomy-term {
     padding-top: 80px;
   }
+  .rightbar ul li{
+    padding: 9px;
+  }
+  .main{}
 }
 .twitter-block{padding:1.825em 0em;}
 /*# sourceMappingURL=app.css.map */
@@ -5552,6 +5581,14 @@ span.playicon-over{margin:10px;position: absolute;}
   padding: 15px;
   float: right;
 }
+@media (min-width: 320px) and (max-width: 640px) {
+  .cell, .cell-1, .cell-2, .cell-3{
+    padding: 5px;
+  }
+  .mcell-2{
+    width: 49.5%;
+  }
+}
 @media (min-width: 768px) {
   .cell{
     width: 25%;
@@ -5564,6 +5601,9 @@ span.playicon-over{margin:10px;position: absolute;}
   }
   .cell-3{
     width: 33%;
+  }
+  #container{
+    margin-top: 40px;
   }
 }
 @media (min-width: 992px) {
@@ -5581,9 +5621,6 @@ span.playicon-over{margin:10px;position: absolute;}
   }
 }
 
-#container{
-  margin-top: 40px;
-}
 #container, .container{
   max-width: 1270px;
   margin-left: auto;
@@ -5759,16 +5796,11 @@ ul.newsticker {
   line-height: normal;
   margin: 25px 0px;
 }
-.videos-today img{
-  /*border-radius: 50px 10px 10px;*/
-  /*-webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);*/
-  /*clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 20%);*/
-}
 .videos-today article.snippet{
   height: auto;
 }
 .rightbar{
-  font-size: 14px;
+  font-size: 16px;
   padding: 18px 0;
   background: #fff no-repeat center center; 
   -webkit-background-size: 100% 100%;
@@ -5777,6 +5809,7 @@ ul.newsticker {
   background-size: 100% 100%;
 }
 .rightbar ul li{
+  border-right: 7px solid #fff;
   border-bottom: 1px solid #f9f9f9;
   height: 89px;
   padding: 18px 30px;
@@ -5784,7 +5817,7 @@ ul.newsticker {
 .rightbar ul li:hover{
   background-color: #f9f9f9;
   border-right: 7px solid  #00ffff;
-  padding-right: 26px;
+  /*padding-right: 26px;*/
 }
 .rightbar ul li:hover a{
   color: #3b3b3b;
@@ -5867,11 +5900,11 @@ have a fixed width and height (but it's not required).
 }
 .owl-prev,
 .jcarousel-control-prev {
-  left: 27px;
+  right: 27px;
 }
 .owl-next,
 .jcarousel-control-next {
-  right: 27px;
+  left: 27px;
 }
 .owl-prev i,
 .jcarousel-control-prev i,
@@ -5898,7 +5931,7 @@ have a fixed width and height (but it's not required).
   color: #fff;
   height: 125px;
   padding: 15px;
-  direction: rtl;
+  margin-bottom: 20px;
 }
 .scldv .sclcn{
   float: right;
@@ -5918,7 +5951,6 @@ have a fixed width and height (but it's not required).
 .scldv p{
   float: right;
   width: 203px;
-  /*font-size: 16px;*/
   line-height: 27px;
   padding-right: 10px;
 
@@ -5926,7 +5958,6 @@ have a fixed width and height (but it's not required).
 .bg-white{background-color: #fff;}
 .fcbk{
   background-color: #3b5a9b;
-  margin-bottom: 20px;
 
 }
 .fcbk i{

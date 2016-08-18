@@ -66,7 +66,7 @@ function tv218_preprocess_page(&$vars)
       $n = n_load($node->nid);
       $section = field_get_items('node', $node, 'field_section');
       $n->field_section = field_view_value('node', $node, 'field_section', $section[0]);
-      $subtitle= field_get_items('node', $node, 'field_subtitle');
+      $subtitle = field_get_items('node', $node, 'field_subtitle');
       $n->field_subtitle = field_view_value('node', $node, 'field_subtitle', $subtitle[0]);
       $hero[] = $n;
     }
@@ -85,14 +85,22 @@ function tv218_preprocess_page(&$vars)
     }
 
     // load promoted nodequeue
-    $nq_featured = nodequeue_load_nodes(2, false, 0, 7);
+    $nq_featured = nodequeue_load_nodes(2, false, 0, 8);
+    $featured = null;
+    $social = null;
     foreach ($nq_featured as $node) {
       $hide = node_load($node->nid);
       $ft = n_load($node->nid);
       $ft->field_hide_thumbnail = $hide->field_hide_thumbnail["und"][0]["value"];
+      if ("social" == $ft->type) {
+        $social[] = $ft;
+        continue;
+      }else{
       $featured[] = $ft;
+      }
     }
     $vars['nq']['featured'] = $featured;
+    $vars['nq']['social'] = $social;
 
     // load latest nodequeue
     $nq_latest = nodequeue_load_nodes(4, false, 0, 12);
@@ -461,10 +469,11 @@ function getVideos($type = "feature", $size = 2)
       $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=5";
       break;
     case "most_view":
-      $url = "https://vod-platform.net/integration/stats/getmostplayed/7?user=api@218tv.net&pass=4pi!32n8tZ&top=" . $size;
+      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=5";
+//      $url = "https://vod-platform.net/integration/stats/getmostplayed/7?user=api@218tv.net&pass=4pi!32n8tZ&top=" . $size;
       break;
     case "all":
-      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&folderid=815&PageNo=1&PageSize=".$size;
+      $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&folderid=815&PageNo=1&PageSize=" . $size;
       break;
     case "feature":
       $url = "https://www.vod-platform.net/integration/VODList?user=api@218tv.net&pass=4pi!32n8tZ&PageNo=1&PageSize=7";

@@ -14,9 +14,9 @@ global $base_url;
           <?php endif ?>
           <a href="<?php echo $n->href ?>"><img src="<?php echo $n->image['x1270']; ?>" alt=""></a>
           <div class="headline-overlay">
-            <?php if($n->field_subtitle['#markup']):?>
-            <h2><a href="<?php echo $n->href; ?>"><?php echo $n->field_subtitle['#markup']; ?></a></h2>
-            <?php endif;?>
+            <?php if ($n->field_subtitle['#markup']): ?>
+              <h2><a href="<?php echo $n->href; ?>"><?php echo $n->field_subtitle['#markup']; ?></a></h2>
+            <?php endif; ?>
             <h3><a href="<?php echo $n->href ?>"><?php echo $n->title; ?></a></h3>
           </div>
         </article>
@@ -47,7 +47,7 @@ global $base_url;
         $fcnt = 0;
         foreach ($nq['featured'] as $article):
           $fcnt++;
-          if ($fcnt >= 6) {
+          if ($fcnt >= 7) {
             continue;
           }
           ?>
@@ -75,19 +75,33 @@ global $base_url;
           </div>
           <?php
         endforeach;
+        if ($nq['social']):
+          ?>
+          <div class="cell-3">
+            <?php
+            foreach ($nq['social'] as $article):
+              $scClss = "";
+              switch ($article->social_channel):
+                case 'facebook':
+                  $scClss = "fcbk";
+                  break;
+                case 'twitter':
+                  $scClss = "twttr";
+                  break;
+              endswitch;
+              ?>
+              <a href="<?php echo $article->href; ?>">
+                <div class="scldv <?php echo $scClss; ?>"><span class="sclcn"><i class="fa fa-<?php echo $article->social_channel; ?>"></i></span>
+                  <p><?php echo $article->title; ?></p>
+                </div>
+              </a>
+              <?php
+            endforeach;
+            ?>
+          </div>
+          <?php
+        endif;
         ?>
-        <div class="cell-3">
-          <div class="scldv fcbk"><span class="sclcn"><i class="fa fa-facebook"></i></span>
-            <p>
-              درجات الحرارة المرتفعة تدفع البغداديين للخروج ضد الحكومة 
-            </p>
-          </div>
-          <div class="scldv twttr"><span class="sclcn"><i class="fa fa-twitter"></i></span>
-            <p> 
-              درجات الحرارة المرتفعة تدفع البغداديين للخروج ضد الحكومة 
-            </p>
-          </div>
-        </div>
       </div>
       <div class="row">
         <?php for ($i = count($menus['promoted']) - 1; $i >= 0; $i--): ?>
@@ -165,24 +179,24 @@ global $base_url;
       <?php if (is_array($mv)) { ?>
         <div class="row" style="overflow: hidden; margin-bottom: 20px; max-height: 517px;padding: 15px;">
           <div class="cell-3" style="padding: 0px;">
-            <div class="strike-through-header" style="overflow: hidden;">
+            <div class="grey-list">
               <h3 class="bold">أحدث الفيديوهات</h3>
-              <ol class="topfive" id="vertical-slide">
-                <?php
-                foreach ($mv as $i => $value) {
-                  $img = $mv[$i]['thumb'];
-                  $title = $mv[$i]['title'];
-                  $date = $mv[$i]['date'];
-                  $id = $mv[$i]['key'];
-                  $url = $base_url . "/episode/" . $id;
-                  ?>
-                  <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
-                    <span><?php echo $i + 1 ?></span>
-                    <h4><?php echo $title ?></h4>
-                  </li>    
-                <?php } ?> 
-              </ol>
             </div>
+            <ol class="topfive" id="vertical-slide" style="overflow: hidden;">
+              <?php
+              foreach ($mv as $i => $value) {
+                $img = $mv[$i]['thumb'];
+                $title = $mv[$i]['title'];
+                $date = $mv[$i]['date'];
+                $id = $mv[$i]['key'];
+                $url = $base_url . "/episode/" . $id;
+                ?>
+                <li data-img="<?php echo $img; ?>" data-url="<?php echo $url ?>" data-title="<?php echo $title ?>" class="<?php echo (0 == $i) ? "active" : "" ?>">
+                  <span><?php echo $i + 1 ?></span>
+                  <h4><?php echo $title ?></h4>
+                </li>    
+              <?php } ?> 
+            </ol>
           </div>
           <div style="float: right;width: 66%;">
             <div class="center-cropped-slide" style="background-image: url(<?php echo $mv[0]['thumb']; ?>)">
@@ -241,49 +255,19 @@ global $base_url;
       </div>
       <div class="row">
         <div class="cell-1" style="padding-bottom: 0px;">
-          <div class="strike-through-header">
+          <div class="grey-list">
             <h3 class="bold">الأكثر قراءة </h3>
-            <ol class="topfive">
-              <li>
-                <a href="/content/%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A-%D8%A7%D9%84%D9%88%D9%81%D8%A7%D9%82-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%86-%D8%B1%D8%A7%D8%B3-%D9%84%D8%A7%D9%86%D9%88%D9%81-%D8%A7%D8%B3%D8%AA%D8%A6%D9%86%D8%A7%D9%81-%D8%AA%D8%B5%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7">
-                  <span>1</span>
-                  لا مواعيد غرامية .. لا أصدقاء .. لا إجازات .. تعرف على أصغر مليارديرة
-                </a>
-              </li>
-              <li>
-                <a href="content/%D8%BA%D8%A7%D8%AF%D8%A9-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B2%D9%82-%D8%AA%D8%B8%D9%87%D8%B1-%D8%A8%D9%84%D8%A7-%D9%85%D8%A7%D9%83%D9%8A%D8%A7%D8%AC-%D9%88%D8%AA%D8%AB%D9%8A%D8%B1-%D8%B1%D8%AF%D9%88%D8%AF%D8%A7-%D8%B4%D8%A7%D9%87%D8%AF">
-                  <span>2</span>
-                  "الرئاسي" يدين تفجير "القوارشة" بعد 24 ساعة من وقوعه
-                </a>
-              </li>
-              <li>
-                <a href="content/%D9%82%D8%A7%D8%AF%D8%A9-%D9%81%D9%8A-%D8%AF%D8%A7%D8%B9%D8%B4-%D9%8A%D8%AA%D9%86%D9%82%D9%84%D9%88%D9%86-%D8%B3%D8%B1%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A8%D9%8A%D9%86-%D9%84%D9%8A%D8%A8%D9%8A%D8%A7-%D9%88%D8%AA%D9%88%D9%86%D8%B3">
-                  <span>3</span>
-                  لجنة نيابية: الضربات الأميركية "خروقات".. ولأهداف "انتخابية"
-                </a>
-              </li>
-              <li>
-                <a href="content/%D8%A7%D9%84%D8%B3%D8%A4%D8%A7%D9%84-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%AD%D8%B5%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D8%9F">
-                  <span>4</span>
-                  "الحكومة الرابعة" تثير غضبا شعبيا واسعا داخل ليبيا 
-                </a>
-              </li>
-              <li>
-                <a href="content/%D9%81%D9%88%D8%B4%D9%8A%D9%83-%D8%A8%D9%80-10-%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AF%D9%88%D9%84%D8%A7%D8%B1-%D9%84%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D9%8A%D9%86">
-                  <span>5</span>
-                  مؤسسة النفط "تُشكك" بالاتفاق مع "الرئاسي" 
-                </a>
-              </li>
-              <?php foreach ($popular as $k => $p): ?>
-<!--                <li>
-                  <a href="<?php echo render_href($p->nid) ?>">
-                    <span><?php echo $k + 1 ?></span>
-                    <?php echo $p->node_title ?>
-                  </a>
-                </li>-->
-              <?php endforeach ?>
-            </ol>
           </div>
+          <ol class="topfive">
+            <?php foreach ($popular as $k => $p): ?>
+              <li>
+                <a href="<?php echo render_href($p->nid) ?>">
+                  <span><?php echo $k + 1 ?></span>
+                  <?php echo $p->node_title ?>
+                </a>
+              </li>
+            <?php endforeach ?>
+          </ol>
         </div>
       </div>
       <div class="row">
@@ -310,7 +294,6 @@ global $base_url;
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

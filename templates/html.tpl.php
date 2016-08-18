@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
     <base href="<?php echo base_path(); ?>"/>
@@ -8,8 +8,6 @@
     <title><?php print $head_title; ?></title>
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
-
-
     <link rel="stylesheet"
           href="<?php echo base_path() . path_to_theme() ?>/css/app.css?<?php echo variable_get('css_js_query_string', '0') ?>" >
           <?php print $styles; ?>
@@ -33,7 +31,6 @@
     </script>
     <meta property="fb:pages" content="127497010925409" />  
   </head>
-
   <body class="<?php print $classes; ?> <?php
   if (isset($GLOBALS['body-class'])) {
     echo $GLOBALS['body-class'];
@@ -62,16 +59,11 @@
         <div class="msearch-box">
           <form action="/search/node">
             <input type="text" class="searchtxt" placeholder="ابحث في 218" name="keys">
-            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
-
-
+            <!--<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>-->
           </form>
         </div>
-
-
         <div class="mtwocell">
           <div class="left">
-
           </div>
           <div class="right">
             <ul>
@@ -85,21 +77,13 @@
                 <li><a class="<?php echo $url_hash == $url_nav_hash ? 'active' : '' ?>"
                        href="<?php echo $item['href'] ?>"><?php echo $item['title'] ?></a></li>
                 <?php endforeach ?>
-
             </ul>
-
           </div>
         </div>
-
         <div class="down">
-
         </div>
-
-
       </div>
     </div>
-
-
     <nav class="pushy pushy-right">
       <div style='min-height:750px;height:auto;overflow-y:auto'>
         <ul>
@@ -107,8 +91,6 @@
             <form action="/search/node">
               <input type="text" class="searchtxt" placeholder="ابحث في 218" name="keys">
               <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
-
-
             </form>
           </div>
         </ul>
@@ -131,12 +113,10 @@
             <li><a class="<?php echo $url_hash == $url_nav_hash ? 'active' : '' ?>"
                    href="<?php echo $item['href'] ?>"><?php echo $item['title'] ?></a></li>
             <?php endforeach ?>
-
         </ul>
         <ul><li style="height:60px;visibility:hidden"></li></ul>
       </div>
     </nav>
-
     <?php print $page_top; ?>
     <div class="w-mnav">
       <div class="mnav">
@@ -149,23 +129,25 @@
         <?php } ?>
         <div class="burger">
           <a class="menu-btn" href="#"><img src="<?php echo base_path() . path_to_theme() ?>/assets/burger.png"
-                                            alt=""></a>
+                                            alt="" width="34px" height="24px"></a>
         </div>
         <div class="logo">
           <a href="<?php echo base_path() ?>"><img
-              src="<?php echo base_path() . path_to_theme() ?>/assets/logo-mobile.svg" alt=""></a>
+              src="<?php echo base_path() . path_to_theme() ?>/assets/logo-mobile.svg" alt="" width="85px"></a>
         </div>
-
+        <div class="msearch-btn">
+          <a href="#" class="menu-btn">
+            <img src="<?php echo base_path() . path_to_theme() ?>/assets/search.png"/>
+          </a>
+        </div>
       </div>
     </div>
-
     <div class="w-header">
       <div class="header">
         <div class="logo">
           <a href="<?php echo base_path() ?>"><img src="<?php echo base_path() . path_to_theme() ?>/assets/logo.svg"
                                                    alt="" width="90px"></a>
         </div>
-
         <div class="nav">
           <ul>
             <?php
@@ -180,16 +162,11 @@
                      href="<?php echo $item['href'] ?>"><?php echo $item['title'] ?></a></li>
               <?php endforeach ?>
           </ul>
-
           <div class="search-box">
-            <form action="/search/node">
+            <form action="<?php echo base_path() ?>/search/node">
               <input type="text" class="searchtxt" name="keys">
-              <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
-
-
             </form>
           </div>
-
           <ul class="social">
             <li><a href="https://www.youtube.com/channel/UCJaQYZQ8X3wOWtNDT6Wn3Rg" target="_blank">
                 <i class="fa fa-youtube-play"></i></a></li>
@@ -200,15 +177,6 @@
             <li><a href="https://www.twitter.com/218tv" target="_blank"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://www.facebook.com/218tv" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
           </ul>
-          <!--          <div class="weather">
-                      <div class="info">
-                        <div>القاهره</div>
-                        <div class="weather-temperature-ny"></div>
-                      </div>
-                      <div class="icon ny">
-                        <img src="" class="weather-icon-ny" alt=""/>
-                      </div>
-                    </div>-->
           <div class="weather-sample">
             <div class="info">
               <div>القاهره</div>
@@ -314,7 +282,7 @@
 
 
     <div class="mrelated">
-      <a class="" href="#"> <?php echo $mlabels[1] ?></a>
+      <a class="" href="#"> <?php echo $mlabels[1] ?> <img src="<?php echo base_path() . path_to_theme() ?>/assets/rarrow.png" height="10px"/></a>
     </div>
 
     <ul class="msocial">
@@ -454,12 +422,12 @@
         $("#liveshow-rail .toplisting").html(html);
       }
       jQuery(function () {
-//        var liveurl = '<?php echo base_path(); ?>ajax/live/load';
-//        console.log(liveurl);
-//        $.get(liveurl, function (data) {
-//          renderlive(data);
-//
-//        });
+        //        var liveurl = '<?php echo base_path(); ?>ajax/live/load';
+        //        console.log(liveurl);
+        //        $.get(liveurl, function (data) {
+        //          renderlive(data);
+        //
+        //        });
         jQuery("form#search-form").hide()
         setTimeout(reinitvideoblk, 500);
         jQuery(".nav  .search-box form").submit(function (e) {
@@ -557,7 +525,7 @@
             navigation: true,
             navigationText: [
               "<i class='icon - chevron - left icon - white'>&lsaquo;</i>",
-              "<i class='icon - chevron - right icon - white'>&rsaquo;</i>"
+              "<i class='icon - chevron - right icon - white'>&rsaquo;</i>",
             ]
           });
           //video slider
